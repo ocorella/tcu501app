@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="comsiteucrtcu501.google.httpssites.tcu501">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Especificacion de Primaria -->
+        <activity
+            android:name=".PrimariaActivity"
+            android:label="Primaria"
+            android:parentActivityName=".MainScreen">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainScreen" />
+        </activity>
+
+        <!-- Especificacion de Secundaria -->
+        <activity
+            android:name=".SecundariaActivity"
+            android:label="Secundaria"
+            android:parentActivityName=".MainScreen">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainScreen" />
+        </activity>
+
+        <!-- Especificacion de Herarquia de grados de Primaria -->
+        <activity android:name=".PrimerGradoActivity"    android:label="Primer Grado"   android:parentActivityName=".PrimariaActivity">
+            <meta-data  android:name="android.support.PARENT_ACTIVITY"  android:value=".PrimariaActivity" />
+        </activity>
+        <activity android:name=".SegundoGradoActivity"    android:label="Segundo Grado"   android:parentActivityName=".PrimariaActivity">
+            <meta-data  android:name="android.support.PARENT_ACTIVITY"  android:value=".PrimariaActivity" />
+        </activity>
+        <activity android:name=".TercerGradoActivity"    android:label="Tercer Grado"   android:parentActivityName=".PrimariaActivity">
+            <meta-data  android:name="android.support.PARENT_ACTIVITY"  android:value=".PrimariaActivity" />
+        </activity>
+        <activity android:name=".CuartoGradoActivity"    android:label="Cuarto Grado"   android:parentActivityName=".PrimariaActivity">
+            <meta-data  android:name="android.support.PARENT_ACTIVITY"  android:value=".PrimariaActivity" />
+        </activity>
+        <activity android:name=".QuintoGradoActivity"    android:label="Quinto Grado"   android:parentActivityName=".PrimariaActivity">
+            <meta-data  android:name="android.support.PARENT_ACTIVITY"  android:value=".PrimariaActivity" />
+        </activity>
+        <activity android:name=".SextoGradoActivity"    android:label="Sexto Grado"   android:parentActivityName=".PrimariaActivity">
+            <meta-data  android:name="android.support.PARENT_ACTIVITY"  android:value=".PrimariaActivity" />
+        </activity>
+
+    </application>
+
+</manifest>
