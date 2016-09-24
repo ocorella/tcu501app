@@ -37,25 +37,77 @@
         </activity>
 
         <!-- Especificacion de Herarquia de grados de Primaria -->
-        <activity android:name=".PrimerGradoActivity"    android:label="Primer Grado"   android:parentActivityName=".PrimariaActivity">
-            <meta-data  android:name="android.support.PARENT_ACTIVITY"  android:value=".PrimariaActivity" />
+        <activity
+            android:name=".PrimerGradoActivity"
+            android:label="Primer Grado"
+            android:parentActivityName=".PrimariaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PrimariaActivity" />
         </activity>
-        <activity android:name=".SegundoGradoActivity"    android:label="Segundo Grado"   android:parentActivityName=".PrimariaActivity">
-            <meta-data  android:name="android.support.PARENT_ACTIVITY"  android:value=".PrimariaActivity" />
+        <activity
+            android:name=".SegundoGradoActivity"
+            android:label="Segundo Grado"
+            android:parentActivityName=".PrimariaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PrimariaActivity" />
         </activity>
-        <activity android:name=".TercerGradoActivity"    android:label="Tercer Grado"   android:parentActivityName=".PrimariaActivity">
-            <meta-data  android:name="android.support.PARENT_ACTIVITY"  android:value=".PrimariaActivity" />
+        <activity
+            android:name=".TercerGradoActivity"
+            android:label="Tercer Grado"
+            android:parentActivityName=".PrimariaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PrimariaActivity" />
         </activity>
-        <activity android:name=".CuartoGradoActivity"    android:label="Cuarto Grado"   android:parentActivityName=".PrimariaActivity">
-            <meta-data  android:name="android.support.PARENT_ACTIVITY"  android:value=".PrimariaActivity" />
+        <activity
+            android:name=".CuartoGradoActivity"
+            android:label="Cuarto Grado"
+            android:parentActivityName=".PrimariaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PrimariaActivity" />
         </activity>
-        <activity android:name=".QuintoGradoActivity"    android:label="Quinto Grado"   android:parentActivityName=".PrimariaActivity">
-            <meta-data  android:name="android.support.PARENT_ACTIVITY"  android:value=".PrimariaActivity" />
+        <activity
+            android:name=".QuintoGradoActivity"
+            android:label="Quinto Grado"
+            android:parentActivityName=".PrimariaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PrimariaActivity" />
         </activity>
-        <activity android:name=".SextoGradoActivity"    android:label="Sexto Grado"   android:parentActivityName=".PrimariaActivity">
-            <meta-data  android:name="android.support.PARENT_ACTIVITY"  android:value=".PrimariaActivity" />
+        <activity
+            android:name=".SextoGradoActivity"
+            android:label="Sexto Grado"
+            android:parentActivityName=".PrimariaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PrimariaActivity" />
         </activity>
-
+        <activity
+            android:name=".PaintActivity"
+            android:label="Paint"
+            android:parentActivityName=".PrimerGradoActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PrimerGradoActivity" />
+            >
+        </activity>
+        <activity android:name=".MemoriaActivity"
+            android:label="Memoria"
+            android:parentActivityName=".PrimerGradoActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PrimerGradoActivity" />
+        </activity>
+        <activity android:name=".RompecabezasActivity"
+            android:label="Rompecabezas"
+            android:parentActivityName=".PrimerGradoActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PrimerGradoActivity" />
+        </activity>
     </application>
 
 </manifest>
