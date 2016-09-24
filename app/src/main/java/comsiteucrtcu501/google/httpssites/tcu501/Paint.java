@@ -23,7 +23,7 @@ public class Paint extends AppCompatActivity {
         if(view!=currPaint){
             ImageButton imgView = (ImageButton)view;
             String color = view.getTag().toString();
-            drawView.setColor(color);
+            drawView.setColorr(color);
             imgView.setImageDrawable(getResources().getDrawable(R.drawable.paint_pressed));
             currPaint.setImageDrawable(getResources().getDrawable(R.drawable.paint));
             currPaint=(ImageButton)view;
