@@ -74,7 +74,7 @@ public class DrawingView extends View{
         return true;
     }
 
-    public void setColor(String newColor){
+    public void setColorr(String newColor){
         invalidate();
         paintColor = Color.parseColor(newColor);
         drawPaint.setColor(paintColor);
