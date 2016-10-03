@@ -4,25 +4,24 @@ import android.graphics.Color;
 import android.view.View;
 import android.content.Context;
 import android.util.AttributeSet;
-
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.view.MotionEvent;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.util.TypedValue;
 
 public class DrawingView extends View{
-    //drawing path
-    private Path drawPath;
-    //drawing and canvas paint
-    private Paint drawPaint, canvasPaint;
-    //initial color
-    private int paintColor = 0xFF660000;
-    //canvas
-    private Canvas drawCanvas;
-    //canvas bitmap
-    private Bitmap canvasBitmap;
-
+    private Path drawPath; //drawing path
+    private Paint drawPaint, canvasPaint; //drawing and canvas paint
+    private int paintColor = 0xFF660000; //initial color
+    private Canvas drawCanvas; //canvas
+    private Bitmap canvasBitmap; //canvas bitmap
+    private float brushSize; // Tamaño del pincel que estamos usando
+    private float lastBrushSize; // Tamaño del pincel en el caso de cambiar al borrador, mantener el tamaño guardado
+    private boolean erase = false; // Boolean para saber si estamos borrando o no
 
     public DrawingView(Context context, AttributeSet attrs){
         super(context, attrs);
@@ -30,11 +29,13 @@ public class DrawingView extends View{
     }
 
     private void setupDrawing(){
+        brushSize = getResources().getInteger(R.integer.medium_size);
+        lastBrushSize = brushSize;
         drawPath = new Path();
         drawPaint = new Paint();
         drawPaint.setColor(paintColor);
         drawPaint.setAntiAlias(true);
-        drawPaint.setStrokeWidth(20);
+        drawPaint.setStrokeWidth(brushSize);
         drawPaint.setStyle(Paint.Style.STROKE);
         drawPaint.setStrokeJoin(Paint.Join.ROUND);
         drawPaint.setStrokeCap(Paint.Cap.ROUND);
@@ -78,5 +79,27 @@ public class DrawingView extends View{
         invalidate();
         paintColor = Color.parseColor(newColor);
         drawPaint.setColor(paintColor);
+    }
+
+    public void setErase(boolean isErase){
+        erase=isErase;
+        if(erase) {
+            drawPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        } else {
+            drawPaint.setXfermode(null);
+        }
+    }
+
+    public void setBrushSize(float newSize){
+        float pixelAmount = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,newSize, getResources().getDisplayMetrics());
+        brushSize=pixelAmount;
+        drawPaint.setStrokeWidth(brushSize);
+    }
+
+    public void setLastBrushSize(float lastSize){
+        lastBrushSize=lastSize;
+    }
+    public float getLastBrushSize(){
+        return lastBrushSize;
     }
 }
