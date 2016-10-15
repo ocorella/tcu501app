@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android.iml" filepath="$PROJECT_DIR$/Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TCU App.iml" filepath="$PROJECT_DIR$/TCU App.iml" />
       <module fileurl="file://$PROJECT_DIR$/TCU501.iml" filepath="$PROJECT_DIR$/TCU501.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
