@@ -13,4 +13,8 @@
     <string name="med">Medium</string>
     <string name="lrg">Large</string>
 
+    <!-- Memory game -->
+    <string name="memoria_4x4">4 x 4</string>
+    <string name="memoria_6x6">6 x 6</string>
+
 </resources>
