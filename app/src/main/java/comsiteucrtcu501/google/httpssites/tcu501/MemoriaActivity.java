@@ -35,17 +35,9 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
         numberOfElements = numRows * numCols;
 
         memoryButtons = new MemoryButton[numberOfElements];
-        buttonGraphics = new int[numberOfElements];
 
-        // Todos los elementos o dibujos
-        buttonGraphics[0] = R.drawable.bear;
-        buttonGraphics[1] = R.drawable.beaver;
-        buttonGraphics[2] = R.drawable.cat;
-        buttonGraphics[3] = R.drawable.chicken;
-        buttonGraphics[4] = R.drawable.cow;
-        buttonGraphics[5] = R.drawable.dog;
-        buttonGraphics[6] = R.drawable.elephant;
-        buttonGraphics[7] = R.drawable.giraffe;
+        buttonGraphics = new int[numberOfElements];
+        shuffleAndSelectGraphics();
 
         buttonGraphicLocations = new int[numberOfElements];
 
@@ -80,6 +72,53 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
 
             buttonGraphicLocations[i] = buttonGraphicLocations[swapIndex];
             buttonGraphicLocations[swapIndex] = temp;
+        }
+    }
+
+    protected void shuffleAndSelectGraphics()
+    {
+        // Se llena un arreglo temporal con todas las imágenes de la categoría escogida
+        int[] tempGraphics = new int[]
+                {
+                        R.drawable.bear,
+                        R.drawable.beaver,
+                        R.drawable.cat,
+                        R.drawable.chicken,
+                        R.drawable.cow,
+                        R.drawable.dog,
+                        R.drawable.elephant,
+                        R.drawable.giraffe,
+                        R.drawable.gnu,
+                        R.drawable.goat,
+                        R.drawable.hippo,
+                        R.drawable.kangaroo,
+                        R.drawable.monkey,
+                        R.drawable.moose,
+                        R.drawable.mouse,
+                        R.drawable.owl,
+                        R.drawable.penguin,
+                        R.drawable.pig,
+                        R.drawable.sheep,
+                        R.drawable.squirrel,
+                        R.drawable.zebra
+                };
+
+        // Se aleatoriza el arreglo temporal
+        Random rand = new Random();
+        for(int i = 0; i < tempGraphics.length - 1; i++)
+        {
+            int temp = tempGraphics[i];
+            int swapIndex = rand.nextInt(tempGraphics.length);
+
+            tempGraphics[i] = tempGraphics[swapIndex];
+            tempGraphics[swapIndex] = temp;
+        }
+
+        // Se escogen los primeros 8 elementos del arreglo temporal para agregarlos al
+        // arreglo de botones.
+        for(int i = 0; i < (numberOfElements / 2); i++)
+        {
+            buttonGraphics[i] = tempGraphics[i];
         }
     }
 
