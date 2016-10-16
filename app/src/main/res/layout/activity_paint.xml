@@ -25,13 +25,13 @@
             android:layout_height="fill_parent"
             android:contentDescription="@string/erase"
             android:src="@drawable/eraser" />
-
         <ImageButton
-            android:id="@+id/save_btn"
+            android:id="@+id/new_btn"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:contentDescription="@string/save"
-            android:src="@drawable/save" />
+            android:contentDescription="@string/start_new"
+            android:src="@drawable/new_pic" />
+
     </LinearLayout>
 
     <comsiteucrtcu501.google.httpssites.tcu501.DrawingView

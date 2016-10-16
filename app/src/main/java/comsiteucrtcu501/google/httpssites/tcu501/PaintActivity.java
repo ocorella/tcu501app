@@ -20,6 +20,7 @@ public class PaintActivity extends AppCompatActivity implements OnClickListener{
     private ImageButton currPaint;
     private ImageButton drawBtn;
     private ImageButton eraseBtn;
+    private ImageButton newBtn;
     private float smallBrush, mediumBrush, largeBrush;
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -37,6 +38,8 @@ public class PaintActivity extends AppCompatActivity implements OnClickListener{
         largeBrush = getResources().getInteger(R.integer.large_size);
         drawBtn = (ImageButton)findViewById(R.id.draw_btn);
         drawBtn.setOnClickListener(this);
+        newBtn = (ImageButton)findViewById(R.id.new_btn);
+        newBtn.setOnClickListener(this);
 
         //drawView.setBrushSize(mediumBrush);
     }
@@ -97,7 +100,7 @@ public class PaintActivity extends AppCompatActivity implements OnClickListener{
         if(view.getId()==R.id.draw_btn){
             drawView = (DrawingView)findViewById(R.id.drawing);
             final Dialog brushDialog = new Dialog(this);
-            brushDialog.setTitle("Tamaño del pincel");
+            brushDialog.setTitle("Brush size:");
             brushDialog.setContentView(R.layout.brush_chooser);
 
             ImageButton smallBtn = (ImageButton)brushDialog.findViewById(R.id.small_brush);
@@ -168,6 +171,24 @@ public class PaintActivity extends AppCompatActivity implements OnClickListener{
                 }
             });
             brushDialog.show();
+        }
+        else if(view.getId()==R.id.new_btn){
+            drawView = (DrawingView)findViewById(R.id.drawing);
+            AlertDialog.Builder newDialog = new AlertDialog.Builder(this);
+            newDialog.setTitle("New drawing");
+            newDialog.setMessage("Do you want to start a new drawing?");
+            newDialog.setNegativeButton("No", new DialogInterface.OnClickListener(){
+                public void onClick(DialogInterface dialog, int which){
+                    dialog.cancel();
+                }
+            });
+            newDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
+                public void onClick(DialogInterface dialog, int which){
+                    drawView.startNew();
+                    dialog.dismiss();
+                }
+            });
+            newDialog.show();
         }
     }
 }

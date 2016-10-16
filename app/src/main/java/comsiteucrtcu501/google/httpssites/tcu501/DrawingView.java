@@ -85,6 +85,7 @@ public class DrawingView extends View{
         erase=isErase;
         if(erase) {
             drawPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+
         } else {
             drawPaint.setXfermode(null);
         }
@@ -96,9 +97,15 @@ public class DrawingView extends View{
         drawPaint.setStrokeWidth(brushSize);
     }
 
+    public void startNew(){
+        drawCanvas.drawColor(0, PorterDuff.Mode.CLEAR);
+        invalidate();
+    }
+
     public void setLastBrushSize(float lastSize){
         lastBrushSize=lastSize;
     }
+
     public float getLastBrushSize(){
         return lastBrushSize;
     }
