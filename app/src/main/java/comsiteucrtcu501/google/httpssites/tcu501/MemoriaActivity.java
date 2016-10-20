@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.Toast;
+
 
 import java.util.Random;
 
@@ -21,6 +23,7 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
     private MemoryButton selectedButton1;
     private MemoryButton selectedButton2;
     private boolean isBusy = false;
+    private int counter = 0;
 
 
     @Override
@@ -166,6 +169,13 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
             memoryButton.setEnabled(false);
 
             selectedButton1 = null;
+
+            counter++;
+            if(counter == (numberOfElements/2))
+            {
+                Toast toast = Toast.makeText(this, "Ganaste!", Toast.LENGTH_SHORT);
+                toast.show();
+            }
 
             return;
         }
