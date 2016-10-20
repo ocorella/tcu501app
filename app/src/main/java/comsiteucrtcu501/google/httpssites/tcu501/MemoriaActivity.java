@@ -17,6 +17,7 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
     private MemoryButton[] memoryButtons;
     private int[] buttonGraphicLocations;
     private int[] buttonGraphics;
+    private int[] buttonSounds;
     private MemoryButton selectedButton1;
     private MemoryButton selectedButton2;
     private boolean isBusy = false;
@@ -37,6 +38,7 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
         memoryButtons = new MemoryButton[numberOfElements];
 
         buttonGraphics = new int[numberOfElements];
+        buttonSounds = new int[numberOfElements];
         shuffleAndSelectGraphics();
 
         buttonGraphicLocations = new int[numberOfElements];
@@ -47,7 +49,7 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
         {
             for(int c = 0; c < numCols; c++)
             {
-                MemoryButton tempButton = new MemoryButton(this, r, c, buttonGraphics[buttonGraphicLocations[r*numCols+c]]);
+                MemoryButton tempButton = new MemoryButton(this, r, c, buttonGraphics[buttonGraphicLocations[r*numCols+c]], buttonSounds[buttonGraphicLocations[r*numCols+c]]);
                 tempButton.setId(View.generateViewId());
                 tempButton.setOnClickListener(this);
                 memoryButtons[r * numCols + c] = tempButton;
@@ -80,38 +82,47 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
         // Se llena un arreglo temporal con todas las imágenes de la categoría escogida
         int[] tempGraphics = new int[]
                 {
-                        R.drawable.bear,
-                        R.drawable.beaver,
-                        R.drawable.cat,
-                        R.drawable.chicken,
-                        R.drawable.cow,
-                        R.drawable.dog,
-                        R.drawable.elephant,
-                        R.drawable.giraffe,
-                        R.drawable.gnu,
-                        R.drawable.goat,
-                        R.drawable.hippo,
-                        R.drawable.kangaroo,
-                        R.drawable.monkey,
-                        R.drawable.moose,
-                        R.drawable.mouse,
-                        R.drawable.owl,
-                        R.drawable.penguin,
-                        R.drawable.pig,
-                        R.drawable.sheep,
-                        R.drawable.squirrel,
+                        R.drawable.bear,        R.drawable.beaver,
+                        R.drawable.cat,         R.drawable.chicken,
+                        R.drawable.cow,         R.drawable.dog,
+                        R.drawable.elephant,    R.drawable.giraffe,
+                        R.drawable.gnu,         R.drawable.goat,
+                        R.drawable.hippo,       R.drawable.kangaroo,
+                        R.drawable.monkey,      R.drawable.moose,
+                        R.drawable.mouse,       R.drawable.owl,
+                        R.drawable.penguin,     R.drawable.pig,
+                        R.drawable.sheep,       R.drawable.squirrel,
                         R.drawable.zebra
                 };
 
-        // Se aleatoriza el arreglo temporal
+        int[] tempSounds = new int[]
+                {
+                        R.raw.bear,        R.raw.beaver,
+                        R.raw.cat,         R.raw.chicken,
+                        R.raw.cow,         R.raw.dog,
+                        R.raw.elephant,    R.raw.giraffe,
+                        R.raw.gnu,         R.raw.goat,
+                        R.raw.hippo,       R.raw.kangaroo,
+                        R.raw.monkey,      R.raw.moose,
+                        R.raw.mouse,       R.raw.owl,
+                        R.raw.penguin,     R.raw.pig,
+                        R.raw.sheep,       R.raw.squirrel,
+                        R.raw.zebra
+                };
+
+        // Se aleatorizan los arreglos temporales
         Random rand = new Random();
         for(int i = 0; i < tempGraphics.length - 1; i++)
         {
-            int temp = tempGraphics[i];
+            int tempG = tempGraphics[i];
+            int tempS = tempSounds[i];
             int swapIndex = rand.nextInt(tempGraphics.length);
 
             tempGraphics[i] = tempGraphics[swapIndex];
-            tempGraphics[swapIndex] = temp;
+            tempGraphics[swapIndex] = tempG;
+
+            tempSounds[i] = tempSounds[swapIndex];
+            tempSounds[swapIndex] = tempS;
         }
 
         // Se escogen los primeros 8 elementos del arreglo temporal para agregarlos al
@@ -119,6 +130,7 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
         for(int i = 0; i < (numberOfElements / 2); i++)
         {
             buttonGraphics[i] = tempGraphics[i];
+            buttonSounds[i] = tempSounds[i];
         }
     }
 
@@ -136,6 +148,7 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
         {
             selectedButton1 = memoryButton;
             selectedButton1.flip();
+            selectedButton1.playSound();
             return;
         }
 
@@ -145,6 +158,7 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
         if(selectedButton1.getFrontDrawableId() == memoryButton.getFrontDrawableId())
         {
             memoryButton.flip();
+            memoryButton.playSound();
             memoryButton.setMatched(true);
             selectedButton1.setMatched(true);
 
@@ -159,6 +173,7 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
         {
             selectedButton2 = memoryButton;
             selectedButton2.flip();
+            selectedButton2.playSound();
             isBusy = true;
 
             final Handler handler = new Handler();
