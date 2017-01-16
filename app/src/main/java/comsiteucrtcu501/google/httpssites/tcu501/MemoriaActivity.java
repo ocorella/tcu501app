@@ -173,7 +173,7 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
             counter++;
             if(counter == (numberOfElements/2))
             {
-                Toast toast = Toast.makeText(this, "Ganaste!", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(this, "You win!", Toast.LENGTH_SHORT);
                 toast.show();
             }
 
