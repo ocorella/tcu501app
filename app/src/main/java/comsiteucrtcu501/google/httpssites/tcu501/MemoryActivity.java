@@ -7,8 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridLayout;
-import android.widget.Toast;
-
 
 import java.util.Random;
 
@@ -36,9 +34,9 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
 
-        gridLayout = (GridLayout)findViewById(R.id.grid_layout_4x4);
+        grade = getIntent().getExtras().getInt("grade");
 
-        startGame(gridLayout);
+        startGame();
     }
 
     /**
@@ -48,8 +46,10 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
      * @author Jonathan Fonseca V.
      * @author Francisco Zúñiga M.
      * */
-    protected void startGame(GridLayout gridLayout)
+    protected void startGame()
     {
+        gridLayout = (GridLayout)findViewById(R.id.grid_layout_4x4);
+
         int numRows = gridLayout.getRowCount();
         int numCols = gridLayout.getColumnCount();
 
@@ -215,11 +215,8 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
             // y además pregunta si quiere volver a jugar
             if(counter == (numberOfElements/2))
             {
-                /*Toast toast = Toast.makeText(this, "You win!", Toast.LENGTH_SHORT);
-                toast.show();
-
-                startGame(gridLayout);*/
                 AlertDialog alertDialogMessage = createMessage();
+
                 alertDialogMessage.show();
             }
 
@@ -255,7 +252,6 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
      * @author Jonathan Fonseca V.
      * @author Francisco Zúñiga M.
      */
-    /
     protected AlertDialog createMessage()
     {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
@@ -267,8 +263,8 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
                 "Of course!",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        //dialog.cancel();
-                        startGame(gridLayout);
+                        limpiarVariables();
+                        startGame();
                     }
                 });
 
@@ -283,5 +279,25 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         AlertDialog alert1 = builder1.create();
 
         return alert1;
+    }
+
+    /**
+     * Limpia las variables para reiniciar el juego.
+     *
+     * @author Jonathan Fonseca V.
+     * @author Francisco Zúñiga M.
+     * */
+    protected void limpiarVariables()
+    {
+        numberOfElements = 0;
+        isBusy = false;
+        counter = 0;
+        /*memoryButtons = null;
+        buttonGraphicLocations = null;
+        buttonGraphics = null;
+        buttonSounds = null;
+        selectedButton1 = null;
+        selectedButton2 = null;*/
+        gridLayout.removeAllViewsInLayout();
     }
 }

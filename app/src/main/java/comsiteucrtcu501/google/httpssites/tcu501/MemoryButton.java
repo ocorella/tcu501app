@@ -58,6 +58,8 @@ public class MemoryButton extends Button {
         return isMatched;
     }
 
+    public boolean isFlipped() { return isFlipped; }
+
     public void setMatched(boolean matched)
     {
         isMatched = matched;
@@ -70,10 +72,10 @@ public class MemoryButton extends Button {
 
     public void flip()
     {
-        if(isMatched)
+        if(isMatched())
             return;
 
-        if(isFlipped)
+        if(isFlipped())
         {
             setBackground(back);
             isFlipped = false;
