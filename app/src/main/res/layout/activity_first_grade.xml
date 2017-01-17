@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="comsiteucrtcu501.google.httpssites.tcu501.PrimerGradoActivity">
+    tools:context="comsiteucrtcu501.google.httpssites.tcu501.FirstGradeActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Memoria"
+                android:text="Memory"
                 android:id="@+id/button_memoria"
                 android:onClick="irAMemoria"
                 android:layout_alignParentTop="true"
@@ -52,7 +52,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rompecabezas"
+                android:text="Puzzle"
                 android:id="@+id/button_rompecabezas"
                 android:onClick="irARompecabezas"
                 android:layout_alignParentTop="true"

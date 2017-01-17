@@ -7,22 +7,23 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="comsiteucrtcu501.google.httpssites.tcu501.PrimariaActivity">
+    tools:context="comsiteucrtcu501.google.httpssites.tcu501.ElementarySchoolActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Primaria"
+        android:text="Elementary School"
         android:id="@+id/textView2"
-        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal|center"
         android:layout_alignParentTop="true"
-        android:textSize="40dp" />
+        android:textSize="40dp"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1er Grado"
+        android:text="1st Grade"
         android:id="@+id/button_1ro"
         android:onClick="irA1ro"
         android:layout_marginTop="56dp"
@@ -33,7 +34,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2do Grado"
+        android:text="2nd Grade"
         android:id="@+id/button_2do"
         android:onClick="irA2do"
         android:layout_below="@+id/button_1ro"
@@ -43,19 +44,16 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3er Grado"
+        android:text="3rd Grade"
         android:id="@+id/button_3ro"
         android:onClick="irA3ro"
         android:layout_below="@+id/button_2do"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2" />
+        android:layout_alignParentRight="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="4to Grado"
+        android:text="4th Grade"
         android:id="@+id/button_4to"
         android:onClick="irA4to"
         android:layout_below="@+id/button_3ro"
@@ -65,7 +63,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5to Grado"
+        android:text="5th Grade"
         android:id="@+id/button_5to"
         android:onClick="irA5to"
         android:layout_below="@+id/button_4to"
@@ -74,7 +72,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="6to Grado"
+        android:text="6th Grade"
         android:id="@+id/button_6to"
         android:onClick="irA6to"
         android:layout_below="@+id/button_5to"

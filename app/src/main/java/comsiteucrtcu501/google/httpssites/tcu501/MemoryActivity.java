@@ -1,20 +1,24 @@
 package comsiteucrtcu501.google.httpssites.tcu501;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridLayout;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.Toast;
 
 
 import java.util.Random;
 
-public class MemoriaActivity extends AppCompatActivity implements View.OnClickListener{
+/**
+ * Clase que maneja el juego "Memoria"
+ *
+ * @author Jonathan Fonseca V.
+ * @author Francisco Zúñiga M.
+ * */
+public class MemoryActivity extends AppCompatActivity implements View.OnClickListener{
     private int numberOfElements;
     private MemoryButton[] memoryButtons;
     private int[] buttonGraphicLocations;
@@ -24,15 +28,28 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
     private MemoryButton selectedButton2;
     private boolean isBusy = false;
     private int counter = 0;
-
+    private int grade;
+    private GridLayout gridLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_memoria);
+        setContentView(R.layout.activity_memory);
 
-        GridLayout gridLayout = (GridLayout)findViewById(R.id.grid_layout_4x4);
+        gridLayout = (GridLayout)findViewById(R.id.grid_layout_4x4);
 
+        startGame(gridLayout);
+    }
+
+    /**
+     * Establece la cantidad de cartas que se van a mostrar, selecciona las imágenes y sonidos
+     * y los posiciona en la pantalla
+     *
+     * @author Jonathan Fonseca V.
+     * @author Francisco Zúñiga M.
+     * */
+    protected void startGame(GridLayout gridLayout)
+    {
         int numRows = gridLayout.getRowCount();
         int numCols = gridLayout.getColumnCount();
 
@@ -61,15 +78,25 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    /**
+     * Mezcla las posiciones de las cartas en donde van a quedar las parejas.
+     *
+     * @author Jonathan Fonseca V.
+     * @author Francisco Zúñiga M.
+     * */
     protected void shuffleButtonGraphics()
     {
         Random rand = new Random();
 
+        // Asigna la ubicación de los botones de las tarjetas, tomando en cuenta
+        // la cantidad de elementos que se van a mostrar. Se divide en dos partes
+        // con los mismos números de ubicación porque son parejas.
         for(int i = 0; i < numberOfElements; i++)
         {
             buttonGraphicLocations[i] = i % (numberOfElements / 2);
         }
 
+        // Mezcla las posiciones para que las parejas queden en diferentes posiciones.
         for(int i = 0; i < numberOfElements; i++)
         {
             int temp = buttonGraphicLocations[i];
@@ -80,6 +107,13 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    /**
+     * Se aleatorizan los arreglos de las imágenes y sonidos para luego seleccionar los elementos.
+     *
+     * que se van a mostrar
+     * @author Jonathan Fonseca V.
+     * @author Francisco Zúñiga M.
+     * */
     protected void shuffleAndSelectGraphics()
     {
         // Se llena un arreglo temporal con todas las imágenes de la categoría escogida
@@ -98,6 +132,7 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
                         R.drawable.zebra
                 };
 
+        // Se llena un arreglo temporal con todos los sonidos de la categoría escogida
         int[] tempSounds = new int[]
                 {
                         R.raw.bear,        R.raw.beaver,
@@ -128,7 +163,7 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
             tempSounds[swapIndex] = tempS;
         }
 
-        // Se escogen los primeros 8 elementos del arreglo temporal para agregarlos al
+        // Se escogen la mitad de los elementos a mostrar del arreglo temporal para agregarlos al
         // arreglo de botones.
         for(int i = 0; i < (numberOfElements / 2); i++)
         {
@@ -147,6 +182,7 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
         if(memoryButton.isMatched)
             return;
 
+        // Si no hay ninguna carta volteada, entonces se asigna esta como la primera para luego compararla.
         if(selectedButton1 == null)
         {
             selectedButton1 = memoryButton;
@@ -155,9 +191,12 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
             return;
         }
 
+        // Si se selecciona una carta que ya está seleccionada, entonces no se hace nada.
         if(selectedButton1.getId() == memoryButton.getId())
             return;
 
+        // Si la carta volteada es igual a la que ya estaba volteada, entonces se dejan volteadas y
+        // se aumenta la cantidad de parejas encontradas.
         if(selectedButton1.getFrontDrawableId() == memoryButton.getFrontDrawableId())
         {
             memoryButton.flip();
@@ -171,14 +210,22 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
             selectedButton1 = null;
 
             counter++;
+
+            // Cuando ya se encontraron todas las parejas, entonces muestra el mensaje de felicitación
+            // y además pregunta si quiere volver a jugar
             if(counter == (numberOfElements/2))
             {
-                Toast toast = Toast.makeText(this, "You win!", Toast.LENGTH_SHORT);
+                /*Toast toast = Toast.makeText(this, "You win!", Toast.LENGTH_SHORT);
                 toast.show();
+
+                startGame(gridLayout);*/
+                AlertDialog alertDialogMessage = createMessage();
+                alertDialogMessage.show();
             }
 
             return;
         }
+        // Si las cartas que están volteadas no son iguales, entonces se voltean y se des-seleccionan
         else
         {
             selectedButton2 = memoryButton;
@@ -200,5 +247,41 @@ public class MemoriaActivity extends AppCompatActivity implements View.OnClickLi
                 }
             }, 500);
         }
+    }
+
+    /**
+     * Crea el mensaje de felicitación y pregunta si quiere continuar jugando.
+     *
+     * @author Jonathan Fonseca V.
+     * @author Francisco Zúñiga M.
+     */
+    /
+    protected AlertDialog createMessage()
+    {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setTitle("CONGRATULATIONS!");
+        builder1.setMessage("Congratulations, you have win this awesome game! \n\nWould you like to play it again?");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Of course!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //dialog.cancel();
+                        startGame(gridLayout);
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "Not now!",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert1 = builder1.create();
+
+        return alert1;
     }
 }

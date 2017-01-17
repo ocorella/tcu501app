@@ -14,7 +14,7 @@ public class MainScreen extends AppCompatActivity {
     }
 
     public void irAPrimaria(View view){
-        Intent startNewActivity = new Intent(this,PrimariaActivity.class);
+        Intent startNewActivity = new Intent(this,ElementarySchoolActivity.class);
         startActivity(startNewActivity);
 
     }

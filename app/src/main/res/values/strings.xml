@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TCU501</string>
-    <string name="button_secundaria">Secundaria</string>
-    <string name="button_primaria">Primaria</string>
+    <string name="button_secundaria">High School</string>
+    <string name="button_primaria">Elementary School</string>
 
     <!-- Paint -->
     <string name="start_new">New</string>
