@@ -10,21 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="comsiteucrtcu501.google.httpssites.tcu501.MemoryActivity"
     android:id="@+id/grid_layout_4x4"
-    android:layout_row="@integer/rows"
-    android:layout_column="@integer/columns"
+    android:rowCount="@integer/rows"
+    android:columnCount="@integer/columns"
     android:layout_gravity="center">
-
-    <!--
-    <TextView
-        android:text="Prueba"
-        android:textSize="20dp"
-        android:textColor="#fff"
-        android:background="#000"
-        android:layout_gravity="bottom|center_horizontal"
-        android:gravity="bottom|center_horizontal"
-        android:layout_marginTop="50dp"
-        android:id="@+id/objectName"
-        android:layout_column="0"
-        android:layout_columnSpan="@integer/columns"
-        />-->
 </GridLayout>

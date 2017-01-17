@@ -30,7 +30,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     private int counter = 0;
     private int grade;
     private GridLayout gridLayout;
-    private TextView objectNameTextView;
+    //private TextView objectNameTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -214,15 +214,6 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
 
             counter++;
 
-            switch (grade)
-            {
-                case 2:
-                    showObjectName(selectedButton1.getId());
-                    break;
-                default:
-                    break;
-            }
-
             // Cuando ya se encontraron todas las parejas, entonces muestra el mensaje de felicitación
             // y además pregunta si quiere volver a jugar
             if(counter == (numberOfElements/2))
@@ -348,16 +339,5 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     {
         Intent startNewActivity = new Intent(this,SecondGradeActivity.class);
         startActivity(startNewActivity);
-    }
-
-    /**
-     * Muestra el nombre del objeto
-     *
-     * @author Jonathan Fonseca V.
-     * @author Francisco Zúñiga M.
-     * */
-    protected void showObjectName(int objectId)
-    {
-
     }
 }
