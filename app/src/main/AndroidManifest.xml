@@ -19,7 +19,7 @@
         <!-- Especificacion de Primaria -->
         <activity
             android:name=".ElementarySchoolActivity"
-            android:label="Primaria"
+            android:label="Elementary School"
             android:parentActivityName=".MainScreen">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -29,7 +29,7 @@
         <!-- Especificacion de Secundaria -->
         <activity
             android:name=".SecundariaActivity"
-            android:label="Secundaria"
+            android:label="High School"
             android:parentActivityName=".MainScreen">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -39,15 +39,15 @@
         <!-- Especificacion de Herarquia de grados de Primaria -->
         <activity
             android:name=".FirstGradeActivity"
-            android:label="Primer Grado"
+            android:label="First Grade"
             android:parentActivityName=".ElementarySchoolActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ElementarySchoolActivity" />
         </activity>
         <activity
-            android:name=".SegundoGradoActivity"
-            android:label="Segundo Grado"
+            android:name=".SecondGradeActivity"
+            android:label="Second Grade"
             android:parentActivityName=".ElementarySchoolActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -55,7 +55,7 @@
         </activity>
         <activity
             android:name=".TercerGradoActivity"
-            android:label="Tercer Grado"
+            android:label="Third Grade"
             android:parentActivityName=".ElementarySchoolActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -63,7 +63,7 @@
         </activity>
         <activity
             android:name=".CuartoGradoActivity"
-            android:label="Cuarto Grado"
+            android:label="Fourth Grade"
             android:parentActivityName=".ElementarySchoolActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -71,7 +71,7 @@
         </activity>
         <activity
             android:name=".QuintoGradoActivity"
-            android:label="Quinto Grado"
+            android:label="Fifth Grade"
             android:parentActivityName=".ElementarySchoolActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -79,7 +79,7 @@
         </activity>
         <activity
             android:name=".SextoGradoActivity"
-            android:label="Sexto Grado"
+            android:label="Six Grade"
             android:parentActivityName=".ElementarySchoolActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -95,7 +95,7 @@
             >
         </activity>
         <activity android:name=".MemoryActivity"
-            android:label="Memoria"
+            android:label="Memory"
             android:parentActivityName=".FirstGradeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

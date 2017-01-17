@@ -2,11 +2,13 @@ package comsiteucrtcu501.google.httpssites.tcu501;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridLayout;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -28,6 +30,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     private int counter = 0;
     private int grade;
     private GridLayout gridLayout;
+    private TextView objectNameTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -211,6 +214,15 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
 
             counter++;
 
+            switch (grade)
+            {
+                case 2:
+                    showObjectName(selectedButton1.getId());
+                    break;
+                default:
+                    break;
+            }
+
             // Cuando ya se encontraron todas las parejas, entonces muestra el mensaje de felicitación
             // y además pregunta si quiere volver a jugar
             if(counter == (numberOfElements/2))
@@ -255,12 +267,12 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     protected AlertDialog createMessage()
     {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-        builder1.setTitle("CONGRATULATIONS!");
-        builder1.setMessage("Congratulations, you have win this awesome game! \n\nWould you like to play it again?");
+        builder1.setTitle(R.string.congrats_message_title);
+        builder1.setMessage(R.string.congrats_message_body);
         builder1.setCancelable(true);
 
         builder1.setPositiveButton(
-                "Of course!",
+                R.string.yes_answer,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         limpiarVariables();
@@ -269,10 +281,23 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
                 });
 
         builder1.setNegativeButton(
-                "Not now!",
+                R.string.no_answer,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
+                        //dialog.cancel();
+
+                        switch (grade)
+                        {
+                            case 1:
+                                goToFirstGradeActivity();
+                                break;
+                            case 2:
+                                goToSecondGradeActivity();
+                                break;
+                            default:
+                                break;
+                        }
+
                     }
                 });
 
@@ -299,5 +324,40 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         selectedButton1 = null;
         selectedButton2 = null;*/
         gridLayout.removeAllViewsInLayout();
+    }
+
+    /**
+     * Redirige al menú de los juegos de primer grado
+     *
+     * @author Jonathan Fonseca V.
+     * @author Francisco Zúñiga M.
+     * */
+    protected void goToFirstGradeActivity()
+    {
+        Intent startNewActivity = new Intent(this,FirstGradeActivity.class);
+        startActivity(startNewActivity);
+    }
+
+    /**
+     * Redirige al menú de los juegos de segundo grado
+     *
+     * @author Jonathan Fonseca V.
+     * @author Francisco Zúñiga M.
+     * */
+    protected void goToSecondGradeActivity()
+    {
+        Intent startNewActivity = new Intent(this,SecondGradeActivity.class);
+        startActivity(startNewActivity);
+    }
+
+    /**
+     * Muestra el nombre del objeto
+     *
+     * @author Jonathan Fonseca V.
+     * @author Francisco Zúñiga M.
+     * */
+    protected void showObjectName(int objectId)
+    {
+
     }
 }

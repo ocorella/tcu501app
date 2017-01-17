@@ -17,11 +17,13 @@ public class FirstGradeActivity extends AppCompatActivity {
         Intent startNewActivity = new Intent(this,PaintActivity.class);
         startActivity(startNewActivity);
     }
-    public void irAMemoria(View view){
+
+    public void goToMemory(View view){
         Intent startNewActivity = new Intent(this,MemoryActivity.class);
         startNewActivity.putExtra("grade", 1);
         startActivity(startNewActivity);
     }
+
     public void irARompecabezas(View view){
         Intent startNewActivity = new Intent(this,RompecabezasActivity.class);
         startActivity(startNewActivity);

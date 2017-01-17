@@ -18,7 +18,7 @@ public class ElementarySchoolActivity extends AppCompatActivity {
         startActivity(startNewActivity);
     }
     public void irA2do(View view){
-        Intent startNewActivity = new Intent(this,SegundoGradoActivity.class);
+        Intent startNewActivity = new Intent(this,SecondGradeActivity.class);
         startActivity(startNewActivity);
     }
     public void irA3ro(View view){
