@@ -3,6 +3,7 @@ package comsiteucrtcu501.google.httpssites.tcu501;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -57,7 +58,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         int numRows = gridLayout.getRowCount();
         int numCols = gridLayout.getColumnCount();
 
-        numberOfElements = (numRows) * numCols;
+        numberOfElements = (numRows-2) * numCols;
 
         memoryButtons = new MemoryButton[numberOfElements];
 
@@ -69,7 +70,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
 
         shuffleButtonGraphics();
 
-        for(int r = 0; r < (numRows); r++)
+        for(int r = 0; r < (numRows-2); r++)
         {
             for(int c = 0; c < numCols; c++)
             {
@@ -203,6 +204,20 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         // se aumenta la cantidad de parejas encontradas.
         if(selectedButton1.getFrontDrawableId() == memoryButton.getFrontDrawableId())
         {
+            switch(grade)
+            {
+                case 2:
+                    int resourceId = selectedButton1.getFrontDrawableId();
+                    String nameOfResource = getResources().getResourceEntryName(resourceId);
+                    TextView textView = new TextView(this);
+                    textView.setText(nameOfResource);
+                    gridLayout.addView(textView);
+                    break;
+                /*case 3:
+                    break;*/
+                default: break;
+            }
+
             memoryButton.flip();
             memoryButton.playSound();
             memoryButton.setMatched(true);
