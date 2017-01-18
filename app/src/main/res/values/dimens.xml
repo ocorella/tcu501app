@@ -13,6 +13,6 @@
     <integer name="large_size">30</integer>
 
     <!-- Memory Game -->
-    <integer name="rows">4</integer>
+    <integer name="rows">6</integer>
     <integer name="columns">4</integer>
 </resources>

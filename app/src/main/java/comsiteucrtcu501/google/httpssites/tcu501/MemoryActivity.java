@@ -57,7 +57,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         int numRows = gridLayout.getRowCount();
         int numCols = gridLayout.getColumnCount();
 
-        numberOfElements = numRows * numCols;
+        numberOfElements = (numRows) * numCols;
 
         memoryButtons = new MemoryButton[numberOfElements];
 
@@ -69,7 +69,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
 
         shuffleButtonGraphics();
 
-        for(int r = 0; r < numRows; r++)
+        for(int r = 0; r < (numRows); r++)
         {
             for(int c = 0; c < numCols; c++)
             {
