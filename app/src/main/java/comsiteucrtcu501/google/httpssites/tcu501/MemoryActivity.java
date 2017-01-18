@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridLayout;
+import android.media.MediaPlayer;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -218,9 +219,11 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
             // y además pregunta si quiere volver a jugar
             if(counter == (numberOfElements/2))
             {
+                MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.win);
+                mp.start();
                 AlertDialog alertDialogMessage = createMessage();
-
                 alertDialogMessage.show();
+
             }
 
             return;
