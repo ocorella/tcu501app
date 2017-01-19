@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Memory Game -->
-    <integer name="rows">2</integer>
+    <integer name="rows">3</integer>
     <integer name="columns">8</integer>
 </resources>
