@@ -47,7 +47,8 @@ public class MemoryButton extends Button {
         setBackground(back);
 
         GridLayout.LayoutParams tempParams = new GridLayout.LayoutParams(GridLayout.spec(r), GridLayout.spec(c));
-        tempParams.width = (int)getResources().getDisplayMetrics().density * 50;
+        tempParams.width = (int)getResources().getDisplayMetrics().density * 70;
+        tempParams.height = (int)getResources().getDisplayMetrics().density * 100;
         tempParams.setMargins(20,20,20,20);
 
         setLayoutParams(tempParams);

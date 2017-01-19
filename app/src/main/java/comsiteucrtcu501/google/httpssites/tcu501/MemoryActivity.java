@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.GridLayout;
 import android.media.MediaPlayer;
@@ -55,6 +56,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     {
         gridLayout = (GridLayout)findViewById(R.id.grid_layout_4x4);
 
+        //int tempRows = gridLayout.getRowCount();
         int numRows = gridLayout.getRowCount();
         int numCols = gridLayout.getColumnCount();
 
@@ -211,7 +213,16 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
                     String nameOfResource = getResources().getResourceEntryName(resourceId);
                     TextView textView = new TextView(this);
                     textView.setText(nameOfResource);
+                    textView.setTextSize(20);
+                    textView.setHeight(80);
+                    textView.setTextColor(Color.BLACK);
+
+                    GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+                    params.setGravity(Gravity.CENTER_HORIZONTAL);
+
+                    textView.setLayoutParams(params);
                     gridLayout.addView(textView);
+
                     break;
                 /*case 3:
                     break;*/
@@ -309,6 +320,8 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
 
                     }
                 });
+
+        builder1.setCancelable(true);
 
         AlertDialog alert1 = builder1.create();
 
