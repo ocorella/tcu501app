@@ -56,7 +56,6 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     {
         gridLayout = (GridLayout)findViewById(R.id.grid_layout_4x4);
 
-        //int tempRows = gridLayout.getRowCount();
         int numRows = gridLayout.getRowCount();
         int numCols = gridLayout.getColumnCount();
 
@@ -215,19 +214,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
             {
                 case 2:
                     int resourceId = selectedButton1.getFrontDrawableId();
-                    String nameOfResource = getResources().getResourceEntryName(resourceId);
-                    TextView textView = new TextView(this);
-                    textView.setText(nameOfResource);
-                    textView.setTextSize(20);
-                    textView.setHeight(80);
-                    textView.setTextColor(Color.BLACK);
-
-                    GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-                    params.setGravity(Gravity.CENTER_HORIZONTAL);
-
-                    textView.setLayoutParams(params);
-                    gridLayout.addView(textView);
-
+                    showObjectName(resourceId);
                     break;
                 /*case 3:
                     break;*/
@@ -254,7 +241,6 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
                 mp.start();
                 AlertDialog alertDialogMessage = createMessage();
                 alertDialogMessage.show();
-
             }
 
             return;
@@ -326,7 +312,15 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
                     }
                 });
 
-        builder1.setCancelable(true);
+        builder1.setNeutralButton(
+                R.string.cancel_answer,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                }
+        );
+        //builder1.setCancelable(true);
 
         AlertDialog alert1 = builder1.create();
 
@@ -366,7 +360,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     /**
-     * Redirige al menú de los juegos de segundo grado
+     * Redirige al menú de los juegos de segundo grado.
      *
      * @author Jonathan Fonseca V.
      * @author Francisco Zúñiga M.
@@ -375,5 +369,28 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     {
         Intent startNewActivity = new Intent(this,SecondGradeActivity.class);
         startActivity(startNewActivity);
+    }
+
+    /**
+     * Muestra el nombre del objeto de la pareja que se acaba de encontrar.
+     *
+     * @author Jonathan Fonseca V.
+     * @author Francisco Zúñiga M.
+     * */
+    protected void showObjectName(int resourceId)
+    {
+        String nameOfResource = getResources().getResourceEntryName(resourceId);
+        TextView textView = new TextView(this);
+        textView.setText(nameOfResource);
+        textView.setTextSize(20);
+        textView.setHeight(80);
+        textView.setTextColor(Color.BLACK);
+
+        GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+        params.setGravity(Gravity.CENTER_HORIZONTAL);
+        params.setMargins(10,15,10,0);
+
+        textView.setLayoutParams(params);
+        gridLayout.addView(textView);
     }
 }
