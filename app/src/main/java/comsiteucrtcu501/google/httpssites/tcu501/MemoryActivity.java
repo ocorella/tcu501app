@@ -40,6 +40,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     private int grade;
     private GridLayout gridLayout;
     private TextView phrase;
+    private int attemptCounter = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -249,7 +250,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
             {
                 MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.win);
                 mp.start();
-                AlertDialog alertDialogMessage = createMessage();
+                AlertDialog alertDialogMessage = createMessageCongrats();
                 alertDialogMessage.show();
             }
 
@@ -258,6 +259,16 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         // Si las cartas que están volteadas no son iguales, entonces se voltean y se des-seleccionan
         else
         {
+            if(grade == 3)
+            {
+                attemptCounter--;
+                if(attemptCounter == 0)
+                {
+                    AlertDialog alertDialogMessageLost = createMessageLost();
+                    alertDialogMessageLost.show();
+                }
+            }
+
             selectedButton2 = memoryButton;
             selectedButton2.flip();
             selectedButton2.playSound();
@@ -285,7 +296,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
      * @author Jonathan Fonseca V.
      * @author Francisco Zúñiga M.
      */
-    protected AlertDialog createMessage()
+    protected AlertDialog createMessageCongrats()
     {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
         builder1.setTitle(R.string.congrats_message_title);
@@ -315,6 +326,9 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
                             case 2:
                                 goToSecondGradeActivity();
                                 break;
+                            case 3:
+                                goToThirdGradeActivity();
+                                break;
                             default:
                                 break;
                         }
@@ -338,6 +352,57 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     /**
+     * Crea el mensaje de que perdió el juegoo por fallar n cantidad de turnos y pregunta si quiere continuar jugando.
+     *
+     * @author Jonathan Fonseca V.
+     * @author Francisco Zúñiga M.
+     */
+    protected AlertDialog createMessageLost()
+    {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setTitle("SORRY");
+        builder1.setMessage("Sorry you lost this game, but don't worry you can try again!!!");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                R.string.yes_answer,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        limpiarVariables();
+                        startGame();
+                    }
+                });
+
+        builder1.setNegativeButton(
+                R.string.no_answer,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //dialog.cancel();
+
+                        switch (grade)
+                        {
+                            case 1:
+                                goToFirstGradeActivity();
+                                break;
+                            case 2:
+                                goToSecondGradeActivity();
+                                break;
+                            case 3:
+                                goToThirdGradeActivity();
+                                break;
+                            default:
+                                break;
+                        }
+
+                    }
+                });
+
+        AlertDialog alert1 = builder1.create();
+
+        return alert1;
+    }
+
+    /**
      * Limpia las variables para reiniciar el juego.
      *
      * @author Jonathan Fonseca V.
@@ -348,6 +413,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         numberOfElements = 0;
         isBusy = false;
         counter = 0;
+        attemptCounter = 3;
         /*memoryButtons = null;
         buttonGraphicLocations = null;
         buttonGraphics = null;
@@ -378,6 +444,18 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     protected void goToSecondGradeActivity()
     {
         Intent startNewActivity = new Intent(this,SecondGradeActivity.class);
+        startActivity(startNewActivity);
+    }
+
+    /**
+     * Redirige al menú de los juegos de tercer grado.
+     *
+     * @author Jonathan Fonseca V.
+     * @author Francisco Zúñiga M.
+     * */
+    protected void goToThirdGradeActivity()
+    {
+        Intent startNewActivity = new Intent(this,ThirdGradeActivity.class);
         startActivity(startNewActivity);
     }
 
