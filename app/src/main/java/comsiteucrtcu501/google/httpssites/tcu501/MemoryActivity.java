@@ -1,14 +1,18 @@
 package comsiteucrtcu501.google.httpssites.tcu501;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.GridLayout;
 import android.media.MediaPlayer;
 import android.widget.TextView;
@@ -387,7 +391,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     {
         String nameOfResource = getResources().getResourceEntryName(resourceId);
         TextView textView = new TextView(this);
-        textView.setText(nameOfResource);
+        textView.setText("esto es una prueba para ver si funciona...");
         textView.setTextSize(20);
         textView.setHeight(80);
         textView.setTextColor(Color.BLACK);
@@ -397,7 +401,24 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         params.setMargins(10,15,10,0);
 
         textView.setLayoutParams(params);
-        gridLayout.addView(textView);
+
+        GridLayout.Spec rowSpan;
+        GridLayout.Spec colspan;
+
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+        {
+            rowSpan = GridLayout.spec(GridLayout.UNDEFINED, 2);
+            colspan = GridLayout.spec(GridLayout.UNDEFINED, 8);
+        }
+        else
+        {
+            rowSpan = GridLayout.spec(GridLayout.UNDEFINED, 4);
+            colspan = GridLayout.spec(GridLayout.UNDEFINED, 4);
+        }
+
+        GridLayout.LayoutParams gridParam = new GridLayout.LayoutParams(rowSpan, colspan);
+        gridLayout.addView(textView, gridParam);
+        //gridLayout.addView(textView);
     }
 
     protected void showObjectPhrase(int resourceId)
