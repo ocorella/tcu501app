@@ -402,23 +402,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
 
         textView.setLayoutParams(params);
 
-        GridLayout.Spec rowSpan;
-        GridLayout.Spec colspan;
-
-        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
-        {
-            rowSpan = GridLayout.spec(GridLayout.UNDEFINED, 2);
-            colspan = GridLayout.spec(GridLayout.UNDEFINED, 8);
-        }
-        else
-        {
-            rowSpan = GridLayout.spec(GridLayout.UNDEFINED, 4);
-            colspan = GridLayout.spec(GridLayout.UNDEFINED, 4);
-        }
-
-        GridLayout.LayoutParams gridParam = new GridLayout.LayoutParams(rowSpan, colspan);
-        gridLayout.addView(textView, gridParam);
-        //gridLayout.addView(textView);
+        gridLayout.addView(textView);
     }
 
     protected void showObjectPhrase(int resourceId)
@@ -449,6 +433,22 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         params.setMargins(10, 15, 10, 0);
 
         textView.setLayoutParams(params);
-        gridLayout.addView(textView);
+
+        GridLayout.Spec rowSpan;
+        GridLayout.Spec colspan;
+
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+        {
+            rowSpan = GridLayout.spec(GridLayout.UNDEFINED, 2);
+            colspan = GridLayout.spec(GridLayout.UNDEFINED, 8);
+        }
+        else
+        {
+            rowSpan = GridLayout.spec(GridLayout.UNDEFINED, 4);
+            colspan = GridLayout.spec(GridLayout.UNDEFINED, 4);
+        }
+
+        GridLayout.LayoutParams gridParam = new GridLayout.LayoutParams(rowSpan, colspan);
+        gridLayout.addView(textView, gridParam);
     }
 }
