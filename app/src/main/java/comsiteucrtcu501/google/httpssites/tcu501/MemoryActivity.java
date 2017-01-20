@@ -13,6 +13,8 @@ import android.widget.GridLayout;
 import android.media.MediaPlayer;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.Random;
 
 /**
@@ -33,10 +35,11 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     private int counter = 0;
     private int grade;
     private GridLayout gridLayout;
-    //private TextView objectNameTextView;
+    private TextView phrase;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
 
@@ -184,7 +187,8 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View v)
+    {
         if(isBusy)
             return;
 
@@ -210,14 +214,16 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         // se aumenta la cantidad de parejas encontradas.
         if(selectedButton1.getFrontDrawableId() == memoryButton.getFrontDrawableId())
         {
+            int resourceId = selectedButton1.getFrontDrawableId();
+
             switch(grade)
             {
                 case 2:
-                    int resourceId = selectedButton1.getFrontDrawableId();
                     showObjectName(resourceId);
                     break;
-                /*case 3:
-                    break;*/
+                case 3:
+                    showObjectPhrase(resourceId);
+                    break;
                 default: break;
             }
 
@@ -389,6 +395,37 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         GridLayout.LayoutParams params = new GridLayout.LayoutParams();
         params.setGravity(Gravity.CENTER_HORIZONTAL);
         params.setMargins(10,15,10,0);
+
+        textView.setLayoutParams(params);
+        gridLayout.addView(textView);
+    }
+
+    protected void showObjectPhrase(int resourceId)
+    {
+        String nameOfResource = getResources().getResourceEntryName(resourceId);
+
+        String[] predicates = new String[]
+                {
+                        " is happy.",
+                        " is eating.",
+                        " is playing with its friends.",
+                        " is sleepy."
+                };
+
+        Random rand = new Random();
+        int randomIndex = rand.nextInt(predicates.length);
+
+        String phrase = "The " + nameOfResource + predicates[randomIndex];
+
+        TextView textView = new TextView(this);
+        textView.setText(phrase);
+        textView.setTextSize(20);
+        textView.setHeight(80);
+        textView.setTextColor(Color.BLACK);
+
+        GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+        params.setGravity(Gravity.CENTER_HORIZONTAL);
+        params.setMargins(10, 15, 10, 0);
 
         textView.setLayoutParams(params);
         gridLayout.addView(textView);

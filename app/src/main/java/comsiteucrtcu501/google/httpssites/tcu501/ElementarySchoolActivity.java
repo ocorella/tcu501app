@@ -22,7 +22,7 @@ public class ElementarySchoolActivity extends AppCompatActivity {
         startActivity(startNewActivity);
     }
     public void irA3ro(View view){
-        Intent startNewActivity = new Intent(this,TercerGradoActivity.class);
+        Intent startNewActivity = new Intent(this,ThirdGradeActivity.class);
         startActivity(startNewActivity);
     }
     public void irA4to(View view){

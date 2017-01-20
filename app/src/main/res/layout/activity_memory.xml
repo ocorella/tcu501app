@@ -12,5 +12,6 @@
     android:id="@+id/grid_layout_4x4"
     android:rowCount="@integer/rows"
     android:columnCount="@integer/columns"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    android:layout_below="@+id/relative_layout_button">
 </GridLayout>

@@ -54,7 +54,7 @@
                 android:value=".ElementarySchoolActivity" />
         </activity>
         <activity
-            android:name=".TercerGradoActivity"
+            android:name=".ThirdGradeActivity"
             android:label="Third Grade"
             android:parentActivityName=".ElementarySchoolActivity">
             <meta-data
