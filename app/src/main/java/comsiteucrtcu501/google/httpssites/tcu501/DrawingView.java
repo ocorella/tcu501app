@@ -1,6 +1,7 @@
 package comsiteucrtcu501.google.httpssites.tcu501;
 
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.view.View;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -77,6 +78,7 @@ public class DrawingView extends View{
 
     public void setColorr(String newColor){
         invalidate();
+
         paintColor = Color.parseColor(newColor);
         drawPaint.setColor(paintColor);
     }

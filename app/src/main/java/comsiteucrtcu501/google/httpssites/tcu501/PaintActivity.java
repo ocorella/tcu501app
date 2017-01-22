@@ -4,8 +4,10 @@ import android.annotation.TargetApi;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.media.MediaPlayer;
 import android.widget.LinearLayout;
 import java.util.UUID;
 import android.provider.MediaStore;
@@ -54,12 +56,93 @@ public class PaintActivity extends AppCompatActivity implements OnClickListener{
             String color = view.getTag().toString();
             //drawView = (DrawingView)findViewById(R.id.drawing);
             drawView.setColorr(color);
+            Log.d("Andres",color);
+            MediaPlayer mp3;
+            String colorMsg = "";
+            switch (color) {
+                case "#FF660000":
+                    mp3 = MediaPlayer.create(getApplicationContext(), R.raw.brown);
+                    colorMsg = "Brown";
+                    mp3.start();
+                    break;
+                case "#FFFF0000":
+                    mp3 = MediaPlayer.create(getApplicationContext(), R.raw.red);
+                    colorMsg = "Red";
+                    mp3.start();
+                    break;
+                case "#FFFF6600":
+                    mp3 = MediaPlayer.create(getApplicationContext(), R.raw.orange);
+                    colorMsg = "Orange";
+                    mp3.start();
+                    break;
+                case "#FFFFCC00":
+                    mp3 = MediaPlayer.create(getApplicationContext(), R.raw.yellow);
+                    colorMsg = "Yellow";
+                    mp3.start();
+                    break;
+                case "#FF009900":
+                    mp3 = MediaPlayer.create(getApplicationContext(), R.raw.green);
+                    colorMsg = "Green";
+                    mp3.start();
+                    break;
+                case "#FF009999":
+                    mp3 = MediaPlayer.create(getApplicationContext(), R.raw.light_blue);
+                    colorMsg = "Light blue";
+                    mp3.start();
+                    break;
+                case "#FF0000FF":
+                    mp3 = MediaPlayer.create(getApplicationContext(), R.raw.blue);
+                    colorMsg = "Blue";
+                    mp3.start();
+                    break;
+                case "#FF990099":
+                    mp3 = MediaPlayer.create(getApplicationContext(), R.raw.purple);
+                    colorMsg = "Purple";
+                    mp3.start();
+                    break;
+                case "#FFFF6666":
+                    mp3 = MediaPlayer.create(getApplicationContext(), R.raw.pink);
+                    colorMsg = "Pink";
+                    mp3.start();
+                    break;
+                case "#FFFFFFFF":
+                    mp3 = MediaPlayer.create(getApplicationContext(), R.raw.white);
+                    colorMsg = "White";
+                    mp3.start();
+                    break;
+                case "#FF787878":
+                    mp3 = MediaPlayer.create(getApplicationContext(), R.raw.gray);
+                    colorMsg = "Gray";
+                    mp3.start();
+                    break;
+                case "#FF000000":
+                    mp3 = MediaPlayer.create(getApplicationContext(), R.raw.black);
+                    colorMsg = "Black";
+                    mp3.start();
+                    break;
+                default:
+                    break;
+            }
+
+            drawView = (DrawingView)findViewById(R.id.drawing);
+            //R.style.MyDialogTheme.
+            AlertDialog newDialog = new AlertDialog.Builder(this).create();
+            newDialog.setTitle("");
+            newDialog.setMessage(android.text.Html.fromHtml("<b>"+colorMsg+"</b>"));
+            //newDialog.
+            newDialog.show();
+
+
+            //MediaPlayer media = MediaPlayer.create(getApplicationContext(), R.raw.color);
+            //media.start();
             imgView.setImageDrawable(getDrawable(R.drawable.paint_pressed));
             currPaint.setImageDrawable(getDrawable(R.drawable.paint));
             currPaint=(ImageButton)view;
         }
 
         else if(view.getId()==R.id.erase_btn){
+            MediaPlayer media = MediaPlayer.create(getApplicationContext(), R.raw.eraser);
+            media.start();
             final Dialog brushDialog = new Dialog(this);
             brushDialog.setTitle("Eraser size:");
             brushDialog.setContentView(R.layout.brush_chooser);
@@ -98,6 +181,8 @@ public class PaintActivity extends AppCompatActivity implements OnClickListener{
 
     public void onClick(View view){
         if(view.getId()==R.id.draw_btn){
+            MediaPlayer media = MediaPlayer.create(getApplicationContext(), R.raw.brush);
+            media.start();
             drawView = (DrawingView)findViewById(R.id.drawing);
             final Dialog brushDialog = new Dialog(this);
             brushDialog.setTitle("Brush size:");
@@ -138,6 +223,8 @@ public class PaintActivity extends AppCompatActivity implements OnClickListener{
             brushDialog.show();
         }
         else if(view.getId()==R.id.erase_btn){
+            MediaPlayer media = MediaPlayer.create(getApplicationContext(), R.raw.eraser);
+            media.start();
             drawView = (DrawingView)findViewById(R.id.drawing);
             final Dialog brushDialog = new Dialog(this);
             brushDialog.setTitle("Eraser size:");
