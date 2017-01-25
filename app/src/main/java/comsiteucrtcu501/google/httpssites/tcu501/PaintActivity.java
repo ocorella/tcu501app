@@ -16,6 +16,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
+import java.lang.reflect.Field;
 
 public class PaintActivity extends AppCompatActivity implements OnClickListener{
     private DrawingView drawView;
@@ -23,6 +24,7 @@ public class PaintActivity extends AppCompatActivity implements OnClickListener{
     private ImageButton drawBtn;
     private ImageButton eraseBtn;
     private ImageButton newBtn;
+    private ImageButton changeBtn;
     private float smallBrush, mediumBrush, largeBrush;
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -42,6 +44,8 @@ public class PaintActivity extends AppCompatActivity implements OnClickListener{
         drawBtn.setOnClickListener(this);
         newBtn = (ImageButton)findViewById(R.id.new_btn);
         newBtn.setOnClickListener(this);
+        changeBtn = (ImageButton)findViewById(R.id.change_btn);
+        changeBtn.setOnClickListener(this);
 
         //drawView.setBrushSize(mediumBrush);
     }
@@ -260,22 +264,41 @@ public class PaintActivity extends AppCompatActivity implements OnClickListener{
             brushDialog.show();
         }
         else if(view.getId()==R.id.new_btn){
-            drawView = (DrawingView)findViewById(R.id.drawing);
-            AlertDialog.Builder newDialog = new AlertDialog.Builder(this);
-            newDialog.setTitle("New drawing");
-            newDialog.setMessage("Do you want to start a new drawing?");
-            newDialog.setNegativeButton("No", new DialogInterface.OnClickListener(){
-                public void onClick(DialogInterface dialog, int which){
-                    dialog.cancel();
-                }
-            });
-            newDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
-                public void onClick(DialogInterface dialog, int which){
-                    drawView.startNew();
-                    dialog.dismiss();
-                }
-            });
+                drawView = (DrawingView)findViewById(R.id.drawing);
+           // drawView = (DrawingView)findViewById(R.id.drawing);
+            drawView.setBackgroundResource(R.drawable.fam2);
+                AlertDialog.Builder newDialog = new AlertDialog.Builder(this);
+                newDialog.setTitle("New drawing");
+                newDialog.setMessage("Do you want to start a new drawing?");
+                newDialog.setNegativeButton("No", new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int which){
+                        dialog.cancel();
+                    }
+                });
+                newDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int which){
+                        drawView.startNew();
+                        dialog.dismiss();
+                    }
+                });
             newDialog.show();
+        }
+        else if(view.getId()== R.id.change_btn){
+            //View view1 = this.getWindow().getDecorView();
+            drawView = (DrawingView)findViewById(R.id.drawing);
+            drawView.setBackgroundResource(R.drawable.fam2);
+
+            /*Field[] ID_Fields = R.raw.class.getFields();
+            int[] resArray = new int[ID_Fields.length];
+            for(int i = 0; i < ID_Fields.length; i++) {
+                try {
+                    resArray[i] = ID_Fields[i].getInt(null);
+                } catch (IllegalArgumentException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }*/
         }
     }
 }
