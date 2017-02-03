@@ -1,6 +1,7 @@
 package comsiteucrtcu501.google.httpssites.tcu501;
 
 import android.annotation.TargetApi;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,6 +27,8 @@ public class PaintActivity extends AppCompatActivity implements OnClickListener{
     private ImageButton newBtn;
     private ImageButton changeBtn;
     private float smallBrush, mediumBrush, largeBrush;
+    private int cuenta = 0;
+    private int limite = 2;
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     protected void onCreate(Bundle savedInstanceState) {
@@ -284,21 +287,18 @@ public class PaintActivity extends AppCompatActivity implements OnClickListener{
             newDialog.show();
         }
         else if(view.getId()== R.id.change_btn){
-            //View view1 = this.getWindow().getDecorView();
-            drawView = (DrawingView)findViewById(R.id.drawing);
-            drawView.setBackgroundResource(R.drawable.fam2);
+            if(cuenta < limite) {
+                cuenta++;
+            } else {
+                cuenta = 1;
+            }
 
-            /*Field[] ID_Fields = R.raw.class.getFields();
-            int[] resArray = new int[ID_Fields.length];
-            for(int i = 0; i < ID_Fields.length; i++) {
-                try {
-                    resArray[i] = ID_Fields[i].getInt(null);
-                } catch (IllegalArgumentException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-            }*/
+            drawView = (DrawingView)findViewById(R.id.drawing);
+
+            Drawable drawable = getResources().getDrawable(getResources()
+                    .getIdentifier("fam"+cuenta, "drawable", getPackageName()));
+            drawView.setBackground(drawable);
+            drawView.startNew();
         }
     }
 }

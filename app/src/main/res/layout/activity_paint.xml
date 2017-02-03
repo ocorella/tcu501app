@@ -51,7 +51,7 @@
         android:layout_marginRight="5dp"
         android:layout_marginTop="3dp"
         android:layout_weight="1"
-        android:background="@drawable/fam" />
+        android:background="@drawable/fam1" />
 
     <LinearLayout
         android:layout_width="wrap_content"
