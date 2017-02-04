@@ -1,6 +1,5 @@
 package comsiteucrtcu501.google.httpssites.tcu501;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,16 +8,11 @@ import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.GridLayout;
 import android.media.MediaPlayer;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
 import java.util.Random;
 
 /**
@@ -39,8 +33,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     private int counter = 0;
     private int grade;
     private GridLayout gridLayout;
-    private TextView phrase;
-    private int attemptCounter = 3;
+    private int attemptsCounter = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -57,8 +50,6 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
      * Establece la cantidad de cartas que se van a mostrar, selecciona las imágenes y sonidos
      * y los posiciona en la pantalla
      *
-     * @author Jonathan Fonseca V.
-     * @author Francisco Zúñiga M.
      * */
     protected void startGame()
     {
@@ -100,8 +91,6 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     /**
      * Mezcla las posiciones de las cartas en donde van a quedar las parejas.
      *
-     * @author Jonathan Fonseca V.
-     * @author Francisco Zúñiga M.
      * */
     protected void shuffleButtonGraphics()
     {
@@ -129,9 +118,6 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     /**
      * Se aleatorizan los arreglos de las imágenes y sonidos para luego seleccionar los elementos.
      *
-     * que se van a mostrar
-     * @author Jonathan Fonseca V.
-     * @author Francisco Zúñiga M.
      * */
     protected void shuffleAndSelectGraphics()
     {
@@ -259,15 +245,15 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         // Si las cartas que están volteadas no son iguales, entonces se voltean y se des-seleccionan
         else
         {
-            if(grade == 3)
+            /*if(grade == 3)
             {
-                attemptCounter--;
-                if(attemptCounter == 0)
+                attemptsCounter--;
+                if(attemptsCounter == 0)
                 {
                     AlertDialog alertDialogMessageLost = createMessageLost();
                     alertDialogMessageLost.show();
                 }
-            }
+            }*/
 
             selectedButton2 = memoryButton;
             selectedButton2.flip();
@@ -293,8 +279,6 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     /**
      * Crea el mensaje de felicitación y pregunta si quiere continuar jugando.
      *
-     * @author Jonathan Fonseca V.
-     * @author Francisco Zúñiga M.
      */
     protected AlertDialog createMessageCongrats()
     {
@@ -307,7 +291,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
                 R.string.yes_answer,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        limpiarVariables();
+                        cleanVariables();
                         startGame();
                     }
                 });
@@ -352,10 +336,8 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     /**
-     * Crea el mensaje de que perdió el juegoo por fallar n cantidad de turnos y pregunta si quiere continuar jugando.
+     * Crea el mensaje de que perdió el juego por fallar n cantidad de turnos y pregunta si quiere continuar jugando.
      *
-     * @author Jonathan Fonseca V.
-     * @author Francisco Zúñiga M.
      */
     protected AlertDialog createMessageLost()
     {
@@ -368,7 +350,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
                 R.string.yes_answer,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        limpiarVariables();
+                        cleanVariables();
                         startGame();
                     }
                 });
@@ -377,7 +359,6 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
                 R.string.no_answer,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        //dialog.cancel();
 
                         switch (grade)
                         {
@@ -393,27 +374,24 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
                             default:
                                 break;
                         }
-
                     }
                 });
 
-        AlertDialog alert1 = builder1.create();
+        //AlertDialog alert1 = builder1.create();
 
-        return alert1;
+        return builder1.create();
     }
 
     /**
      * Limpia las variables para reiniciar el juego.
      *
-     * @author Jonathan Fonseca V.
-     * @author Francisco Zúñiga M.
      * */
-    protected void limpiarVariables()
+    protected void cleanVariables()
     {
         numberOfElements = 0;
         isBusy = false;
         counter = 0;
-        attemptCounter = 3;
+        attemptsCounter = 3;
         /*memoryButtons = null;
         buttonGraphicLocations = null;
         buttonGraphics = null;
@@ -426,8 +404,6 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     /**
      * Redirige al menú de los juegos de primer grado
      *
-     * @author Jonathan Fonseca V.
-     * @author Francisco Zúñiga M.
      * */
     protected void goToFirstGradeActivity()
     {
@@ -438,8 +414,6 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     /**
      * Redirige al menú de los juegos de segundo grado.
      *
-     * @author Jonathan Fonseca V.
-     * @author Francisco Zúñiga M.
      * */
     protected void goToSecondGradeActivity()
     {
@@ -450,8 +424,6 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     /**
      * Redirige al menú de los juegos de tercer grado.
      *
-     * @author Jonathan Fonseca V.
-     * @author Francisco Zúñiga M.
      * */
     protected void goToThirdGradeActivity()
     {
@@ -462,14 +434,12 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     /**
      * Muestra el nombre del objeto de la pareja que se acaba de encontrar.
      *
-     * @author Jonathan Fonseca V.
-     * @author Francisco Zúñiga M.
      * */
     protected void showObjectName(int resourceId)
     {
         String nameOfResource = getResources().getResourceEntryName(resourceId);
         TextView textView = new TextView(this);
-        textView.setText("esto es una prueba para ver si funciona...");
+        textView.setText(nameOfResource);
         textView.setTextSize(20);
         textView.setHeight(80);
         textView.setTextColor(Color.BLACK);
@@ -491,26 +461,26 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
                 {
                         " is happy.",
                         " is eating.",
-                        " is playing with its friends.",
+                        " is playing.",
                         " is sleepy."
                 };
 
         Random rand = new Random();
         int randomIndex = rand.nextInt(predicates.length);
 
-        String phrase = "The " + nameOfResource + predicates[randomIndex];
+        String newPhrase = "The " + nameOfResource + predicates[randomIndex];
 
-        TextView textView = new TextView(this);
-        textView.setText(phrase);
-        textView.setTextSize(20);
-        textView.setHeight(80);
-        textView.setTextColor(Color.BLACK);
+        TextView phrase = new TextView(this);
+        phrase.setText(newPhrase);
+        phrase.setTextSize(20);
+        phrase.setHeight(80);
+        phrase.setTextColor(Color.BLACK);
 
         GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-        params.setGravity(Gravity.CENTER_HORIZONTAL);
+        params.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER);
         params.setMargins(10, 15, 10, 0);
 
-        textView.setLayoutParams(params);
+        phrase.setLayoutParams(params);
 
         GridLayout.Spec rowSpan;
         GridLayout.Spec colspan;
@@ -527,6 +497,6 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         }
 
         GridLayout.LayoutParams gridParam = new GridLayout.LayoutParams(rowSpan, colspan);
-        gridLayout.addView(textView, gridParam);
+        gridLayout.addView(phrase, gridParam);
     }
 }

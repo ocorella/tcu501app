@@ -2,22 +2,37 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
 
-    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="comsiteucrtcu501.google.httpssites.tcu501.MemoryActivity"
-        android:id="@+id/grid_layout_4x4"
-        android:rowCount="@integer/rows"
-        android:columnCount="@integer/columns"
-        android:layout_gravity="center"
-        android:layout_below="@+id/relative_layout_button">
-    </GridLayout>
+        android:orientation="vertical">
+
+        <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            tools:context="comsiteucrtcu501.google.httpssites.tcu501.MemoryActivity"
+            android:id="@+id/grid_layout_4x4"
+            android:rowCount="@integer/rows"
+            android:columnCount="@integer/columns"
+            android:layout_gravity="center">
+        </GridLayout>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/repeat_button"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:clickable="true"
+            android:onClick="goToMemory"/>
+    </LinearLayout>
 </ScrollView>

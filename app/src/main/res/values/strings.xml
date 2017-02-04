@@ -17,7 +17,7 @@
     <string name="memoria_4x4">4 x 4</string>
     <string name="memoria_6x6">6 x 6</string>
     <string name="congrats_message_title">CONGRATULATIONS!</string>
-    <string name="congrats_message_body">Congratulations, you have won in this awesome game! \n\nWould you like to play it again?</string>
+    <string name="congrats_message_body">Congratulations! You have won. You did a great job. \n\nWould you like to play it again?</string>
     <string name="yes_answer">Yes, of course!</string>
     <string name="no_answer">No, not now!</string>
     <string name="cancel_answer">Cancel</string>
