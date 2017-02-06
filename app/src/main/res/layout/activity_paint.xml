@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="#FFCCCCCC"
     android:orientation="vertical"
-    tools:context=".Paint" >
+    tools:context="comsiteucrtcu501.google.httpssites.tcu501.PaintActivity" >
 
     <LinearLayout
         android:layout_width="wrap_content"
