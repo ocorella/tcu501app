@@ -499,4 +499,9 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         GridLayout.LayoutParams gridParam = new GridLayout.LayoutParams(rowSpan, colspan);
         gridLayout.addView(phrase, gridParam);
     }
+
+    public void restartGame()
+    {
+        recreate();
+    }
 }
