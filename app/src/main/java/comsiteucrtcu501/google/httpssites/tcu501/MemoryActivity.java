@@ -300,7 +300,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
                 R.string.no_answer,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        //dialog.cancel();
+                        cleanVariables();
 
                         switch (grade)
                         {
@@ -502,6 +502,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
 
     public void restartGame(View v)
     {
+        cleanVariables();
         recreate();
     }
 }
