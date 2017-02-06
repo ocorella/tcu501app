@@ -11,4 +11,8 @@
     <integer name="medium_size">20</integer>
     <dimen name="large_brush">30dp</dimen>
     <integer name="large_size">30</integer>
+
+    <!-- Memory Game -->
+    <integer name="rows">6</integer>
+    <integer name="columns">4</integer>
 </resources>

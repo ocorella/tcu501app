@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TCU501</string>
-    <string name="button_secundaria">Secundaria</string>
-    <string name="button_primaria">Primaria</string>
+    <string name="button_secundaria">High School</string>
+    <string name="button_primaria">Elementary School</string>
 
     <!-- Paint -->
     <string name="change">Change</string>
@@ -14,4 +14,12 @@
     <string name="med">Medium</string>
     <string name="lrg">Large</string>
 
+    <!-- Memory game -->
+    <string name="memoria_4x4">4 x 4</string>
+    <string name="memoria_6x6">6 x 6</string>
+    <string name="congrats_message_title">CONGRATULATIONS!</string>
+    <string name="congrats_message_body">Congratulations! You have won. You did a great job. \n\nWould you like to play it again?</string>
+    <string name="yes_answer">Yes, of course!</string>
+    <string name="no_answer">No, not now!</string>
+    <string name="cancel_answer">Cancel</string>
 </resources>
