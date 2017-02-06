@@ -33,6 +33,6 @@
             android:layout_gravity="center"
             android:padding="10dp"
             android:clickable="true"
-            android:onClick=""/>
+            android:onClick="restartGame"/>
     </LinearLayout>
 </ScrollView>

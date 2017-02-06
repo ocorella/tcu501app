@@ -392,12 +392,12 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         isBusy = false;
         counter = 0;
         attemptsCounter = 3;
-        /*memoryButtons = null;
+        memoryButtons = null;
         buttonGraphicLocations = null;
         buttonGraphics = null;
         buttonSounds = null;
         selectedButton1 = null;
-        selectedButton2 = null;*/
+        selectedButton2 = null;
         gridLayout.removeAllViewsInLayout();
     }
 
@@ -500,7 +500,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         gridLayout.addView(phrase, gridParam);
     }
 
-    public void restartGame()
+    public void restartGame(View v)
     {
         recreate();
     }
