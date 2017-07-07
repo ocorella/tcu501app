@@ -121,6 +121,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".FirstGradeActivity" />
         </activity>
+        <activity android:name=".HangmanActivity"
+            android:label="Hangman"
+            android:parentActivityName=".ThirdGradeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ThirdGradeActivity" />
+        </activity>
     </application>
 
 </manifest>
