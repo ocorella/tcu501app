@@ -26,12 +26,6 @@ public class HangmanActivity extends Activity{
         TextView hint = (TextView) findViewById(R.id.hint);
 
 
-//                String[] words = {"directions", "chores", "christmas", "birthday", "beach", "mountain", "store", "park", "dish", "bedroom" };
-
-//If you want to buy vegetables you go to this place, Responsability as a family member, Place with trees and swings where you can have fun,
-        //Natural elevation of land, Celebrated in december when Santa Clause comes to town, Place where you sleep and have to clean,
-        //Item you wash after eating, When you were born
-
         switch (current_game.wordToGuess.return_raw_word()) {
             case "directions":  hint.setText("You ask for this if you do not know where to go");
                 break;
@@ -45,13 +39,14 @@ public class HangmanActivity extends Activity{
                 break;
             case "mountain":  hint.setText("Natural elevation of land");
                 break;
-            case "store":  hint.setText("If you want to buy vegetables you go to this place, Responsability as a family member, Place with trees and swings where you can have fun,\n");
+            case "store":  hint.setText("If you want to buy vegetables you go to this place");
                 break;
             case "park":  hint.setText("Place with trees and swings where you can have fun");
                 break;
             case "dish":  hint.setText("Item you wash after eating");
                 break;
             case "bedroom": hint.setText("Place where you sleep and have to clean");
+                break;
             default: hint.setText("");
                 break;
         }

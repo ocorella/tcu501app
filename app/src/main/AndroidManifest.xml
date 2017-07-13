@@ -128,6 +128,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ThirdGradeActivity" />
         </activity>
+
+        <activity android:name=".MathToSpeech"
+            android:label="MathToSpeech">
+        </activity>
     </application>
 
 </manifest>

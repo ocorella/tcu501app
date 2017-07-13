@@ -6,16 +6,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class ThirdGradeActivity extends AppCompatActivity {
 
-    Button hangmanButton;
+    ImageView hangmanButton, memory, paint, puzzle;
     Activity activity = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third_grade);
-        hangmanButton = (Button) findViewById(R.id.button_hangman);
+        hangmanButton = (ImageView) findViewById(R.id.button_hangman);
         hangmanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -24,6 +25,36 @@ public class ThirdGradeActivity extends AppCompatActivity {
 
             }
         });
+        memory = (ImageView) findViewById(R.id.memory_image);
+        memory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startNewActivity = new Intent(activity,MemoryActivity.class);
+                startNewActivity.putExtra("grade", 3);
+                startActivity(startNewActivity);
+
+            }
+        });
+
+        paint = (ImageView) findViewById(R.id.paint_image);
+        paint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startNewActivity = new Intent(activity,PaintActivity.class);
+                startActivity(startNewActivity);
+            }
+        });
+
+        puzzle = (ImageView) findViewById(R.id.puzzle_image);
+        puzzle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startNewActivity = new Intent(activity,MathToSpeech.class);
+                startActivity(startNewActivity);
+            }
+        });
+
+
     }
 
     public void goToMemory(View view){
