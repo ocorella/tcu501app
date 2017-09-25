@@ -13,7 +13,7 @@ public class GenerateWord {
 
     public static String generate()
     {
-        String[] words = {"directions", "chores", "christmas", "birthday", "beach", "mountain", "store", "park", "dish", "bedroom" };
+        String[] words = {"directions", "orange", "christmas", "birthday", "beach", "bedroom", "house", "window", "couch", "chair" };
         Random randomGenerator = new Random();
         randomGenerator.nextInt(words.length);
         return words[randomGenerator.nextInt(words.length)];

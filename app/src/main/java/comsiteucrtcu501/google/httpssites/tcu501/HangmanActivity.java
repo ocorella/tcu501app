@@ -5,8 +5,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by oscar on 06/07/17.
@@ -15,41 +21,42 @@ import android.widget.Toast;
 public class HangmanActivity extends Activity{
 
     CurrentGameStatus current_game = new CurrentGameStatus();
+    TextView hint, category;
+    ImageView image;
+    String[] urlImageList = {"https://cdn.pixabay.com/photo/2013/12/29/10/15/directory-235079_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2012/02/19/18/07/orange-15047_960_720.jpg",
+            "https://asset.holidaycardsapp.com/assets/card/b_day229-6ae37171a98c1ce89a30eb6454e1fe60.png",
+            "https://cdn.pixabay.com/photo/2016/09/03/14/18/natural-1641791_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2016/06/01/17/43/house-1429409_960_720.png",
+            "https://cdn.pixabay.com/photo/2015/09/15/19/26/window-941625_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2013/07/12/17/50/door-152538_960_720.png",
+            "https://cdn.pixabay.com/photo/2013/07/12/13/58/settee-147701_960_720.png",
+            "https://cdn.pixabay.com/photo/2017/09/13/19/53/chair-2746767_960_720.png",
+            "https://cdn.pixabay.com/photo/2013/11/20/23/54/pig-214349_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2016/10/04/23/52/cow-1715829_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2012/04/24/16/27/chicken-40335_960_720.png",
+            "https://cdn.pixabay.com/photo/2014/07/10/17/17/bedroom-389254_960_720.jpg"
+    };
+
+    String[] topics = {"Exchanging basic information", "Fruits and Colors",
+            "Personal Data", "Places", "My Home",
+            "Parts of the House" ,"Parts of the House", "Parts of the House", "Parts of the House", "Farm animals",
+    "Farm animals", "Farm animals", "Parts of the House"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hangman);
 
+
         TextView wordView = (TextView) findViewById(R.id.word);
         TextView scoreText = (TextView) findViewById(R.id.score);
-        TextView hint = (TextView) findViewById(R.id.hint);
+        hint = (TextView) findViewById(R.id.hint);
+        image = (ImageView) findViewById(R.id.imageHint);
 
+        category = (TextView) findViewById(R.id.category);
 
-        switch (current_game.wordToGuess.return_raw_word()) {
-            case "directions":  hint.setText("You ask for this if you do not know where to go");
-                break;
-            case "chores":  hint.setText("Responsability as a family member");
-                break;
-            case "christmas":  hint.setText("Celebrated in december when Santa Clause comes to town");
-                break;
-            case "birthday":  hint.setText("When you were born");
-                break;
-            case "beach":  hint.setText("Place with sand, sun,  and water where you go on vacations");
-                break;
-            case "mountain":  hint.setText("Natural elevation of land");
-                break;
-            case "store":  hint.setText("If you want to buy vegetables you go to this place");
-                break;
-            case "park":  hint.setText("Place with trees and swings where you can have fun");
-                break;
-            case "dish":  hint.setText("Item you wash after eating");
-                break;
-            case "bedroom": hint.setText("Place where you sleep and have to clean");
-                break;
-            default: hint.setText("");
-                break;
-        }
+        setHintText(current_game.wordToGuess.return_raw_word());
 
 
         System.out.println("Game Created with Word: " + current_game.get_raw_word());
@@ -113,26 +120,75 @@ public class HangmanActivity extends Activity{
         wordView.setText(current_game.get_display_word());
         scoreText.setText(Integer.toString(current_game.get_score()));
 
-        switch (current_game.wordToGuess.return_raw_word()) {
-            case "directions":  hint.setText("You ask for this if you do not know where to go");
+        setHintText(current_game.wordToGuess.return_raw_word());
+    }
+
+    public void setHintText(String s){
+        switch (s) {
+            case "directions":
+                hint.setText("You ask for this if you don't know where to go");
+                image.setImageResource(R.drawable.directions);
+                category.setText(topics[0]);
                 break;
-            case "chores":  hint.setText("Responsability as a family member");
+            case "orange":
+                hint.setText("Color of this fruit");
+                image.setImageResource(R.drawable.orange);
+                category.setText(topics[1]);
                 break;
-            case "christmas":  hint.setText("Celebrated in december when Santa Clause comes to town");
+            case "birthday":
+                    hint.setText("Happy ________! Congratulations!");
+                image.setImageResource(R.drawable.birthday);
+                category.setText(topics[2]);
                 break;
-            case "birthday":  hint.setText("When you were born");
+            case "beach":
+                hint.setText("Place with sand, sun,  and water where you go on vacations");
+                image.setImageResource(R.drawable.beach);
+                category.setText(topics[3]);
                 break;
-            case "beach":  hint.setText("Place with sand, sun,  and water where you go on vacations");
+            case "house":
+                hint.setText("Place where you live");
+                image.setImageResource(R.drawable.house);
+                category.setText(topics[4]);
                 break;
-            case "mountain":  hint.setText("Natural elevation of land");
+            case "window":
+                hint.setText("Part of the house to let air in");
+                image.setImageResource(R.drawable.window);
+                category.setText(topics[5]);
                 break;
-            case "store":  hint.setText("If you want to buy vegetables you go to this place, Responsability as a family member, Place with trees and swings where you can have fun,\n");
+            case "door":
+                hint.setText("Open the ____");
+                image.setImageResource(R.drawable.door);
+                category.setText(topics[6]);
                 break;
-            case "park":  hint.setText("Place with trees and swings where you can have fun");
+            case "couch":
+                hint.setText("Long piece of furniture for several people to sit on");
+                image.setImageResource(R.drawable.couch);
+                category.setText(topics[7]);
                 break;
-            case "dish":  hint.setText("Item you wash after eating");
+            case "chair":
+                hint.setText("a seat for one person");
+                image.setImageResource(R.drawable.chair);
+                category.setText(topics[8]);
                 break;
-            case "bedroom": hint.setText("Place where you sleep and have to clean");
+            case "pig":
+                hint.setText("Oink!");
+                image.setImageResource(R.drawable.pig2);
+                category.setText(topics[9]);
+                break;
+            case "cow":
+                hint.setText("Moo!");
+                image.setImageResource(R.drawable.cow2);
+                category.setText(topics[10]);
+                break;
+            case "chicken":
+                hint.setText("Farm animal that gives eggs");
+                image.setImageResource(R.drawable.chicken2);
+                category.setText(topics[11]);
+                break;
+            case "bedroom":
+                hint.setText("Place where you sleep");
+                image.setImageResource(R.drawable.bedroom);
+                category.setText(topics[12]);
                 break;
             default: hint.setText("");
                 break;

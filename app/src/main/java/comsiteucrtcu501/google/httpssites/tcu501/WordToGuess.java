@@ -13,8 +13,7 @@ public class WordToGuess {
     static String raw_text = "";    // Stores the main body of the word to guess
     String current_state = "";    // Current state of the word. "_" for un-guessed letters
 
-    WordToGuess(String word)
-    {
+    WordToGuess(String word) {
         raw_text = word;
         for (int i=0;i<raw_text.length();i++)
             current_state = current_state + "_";
@@ -38,8 +37,7 @@ public class WordToGuess {
         }
     }
 
-    boolean letter_belongs_to_word(String letter)
-    {
+    boolean letter_belongs_to_word(String letter) {
         char c;
         c = letter.toLowerCase().toCharArray()[0];
 
@@ -54,8 +52,7 @@ public class WordToGuess {
         return false;
     }
 
-    boolean letter_already_in_word(String letter)
-    {
+    boolean letter_already_in_word(String letter) {
         char c;
         c = letter.toLowerCase().toCharArray()[0];
 
@@ -71,8 +68,7 @@ public class WordToGuess {
         return false;
     }
 
-    String display_word()
-    {
+    String display_word() {
         String temp = "";
         // Append and pre append a space over
         for (int i = 0; i < current_state.length(); i++)
@@ -84,8 +80,7 @@ public class WordToGuess {
         return temp;
     }
 
-    String return_raw_word()
-    {
+    String return_raw_word() {
         return raw_text;
     }
 
