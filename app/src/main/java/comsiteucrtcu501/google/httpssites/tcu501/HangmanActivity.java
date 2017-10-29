@@ -151,7 +151,7 @@ public class HangmanActivity extends Activity{
                 category.setText(topics[4]);
                 break;
             case "window":
-                hint.setText("Part of the house to let air in");
+                hint.setText("Part of the house for admission of light and air");
                 image.setImageResource(R.drawable.window);
                 category.setText(topics[5]);
                 break;

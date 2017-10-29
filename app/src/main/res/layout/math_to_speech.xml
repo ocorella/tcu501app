@@ -18,37 +18,90 @@
             android:layout_weight="0.5"
             android:orientation="horizontal">
 
-            <TextView
-                android:textColor="@color/black"
-                android:id="@+id/firstnumber"
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.4"
-                android:layout_margin="20dp"
-                android:text="2"
-                android:gravity="center"
-                android:textSize="20dp"/>
+                android:weightSum="1"
+                android:orientation="vertical">
 
-            <TextView
-                android:textColor="@color/black"
-                android:id="@+id/operand"
+                <TextView
+                    android:textColor="@color/black"
+                    android:id="@+id/firstnumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.7"
+                    android:text="2"
+                    android:gravity="center"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:id="@+id/firstnumberText"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.3"
+                    android:text="two"
+                    android:gravity="center"
+                    android:textSize="15dp"/>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
-                android:text="*"
-                android:gravity="center"
-                android:textSize="30dp"/>
+                android:weightSum="1"
+                android:orientation="vertical">
 
-            <TextView
-                android:textColor="@color/black"
-                android:id="@+id/secondnumber"
+                <TextView
+                    android:textColor="@color/black"
+                    android:id="@+id/operand"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:text="*"
+                    android:gravity="center"
+                    android:textSize="30dp"/>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.4"
-                android:layout_margin="20dp"
-                android:text="2"
-                android:gravity="center"
-                android:textSize="20dp"/>
+                android:weightSum="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:id="@+id/secondnumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.7"
+                    android:text="2"
+                    android:gravity="center"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:id="@+id/secondnumbertext"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.3"
+                    android:text="two"
+                    android:gravity="center"
+                    android:textSize="15dp"/>
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
 

@@ -16,13 +16,15 @@ import android.widget.Toast;
 import java.util.Locale;
 import java.util.Random;
 
+import comsiteucrtcu501.google.httpssites.tcu501.Utils.EnglishNumberToWords;
+
 /**
  * Created by oscar on 13/07/17.
  */
 
 public class MathToSpeech extends Activity {
 
-    TextView first, second, operand;
+    TextView first, second, operand, firstText, secondText;
     int maxRandomNumber, rand1, rand2;
     String operation ="";
     int answer;
@@ -31,12 +33,15 @@ public class MathToSpeech extends Activity {
     Button checkResult;
     EditText editText;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.math_to_speech);
 
         first = (TextView) findViewById(R.id.firstnumber);
+        firstText = (TextView) findViewById(R.id.firstnumberText);
+        secondText = (TextView) findViewById(R.id.secondnumbertext);
         operand = (TextView) findViewById(R.id.operand);
         second = (TextView) findViewById(R.id.secondnumber);
         editText = (EditText) findViewById(R.id.math_answer);
@@ -101,7 +106,10 @@ public class MathToSpeech extends Activity {
                                         rand2 = temp;
                                     }
                                     first.setText(Integer.toString(rand1));
+                                    firstText.setText(""+EnglishNumberToWords.convert(rand1));
                                     second.setText(Integer.toString(rand2));
+                                    secondText.setText(""+EnglishNumberToWords.convert(rand2));
+
 
                                     t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
                                         @Override
@@ -148,7 +156,13 @@ public class MathToSpeech extends Activity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String ced = input.getText().toString();
-                int i = Integer.parseInt(ced);
+                int i = 0;
+                if(ced.isEmpty()){
+                    i = 10;
+                }
+                else {
+                    i = Integer.parseInt(ced);
+                }
                 maxRandomNumber = i;
                 Random randomGenerator = new Random();
                 rand1 = randomGenerator.nextInt(maxRandomNumber+1);
@@ -161,11 +175,13 @@ public class MathToSpeech extends Activity {
                 if(op == 0){
                     operation = "-";
                     answer = rand1 - rand2;
+                    answer = Math.abs(answer);
                     operandToSpeech = "minus";
                 }
                 else if (op == 1) {
                     operation = "*";
                     answer = rand1 * rand2;
+                    answer = Math.abs(answer);
                     operandToSpeech = "multiplied by";
                 }
                 else if (op == 2) {
@@ -174,11 +190,13 @@ public class MathToSpeech extends Activity {
 //                    operandToSpeech = "divided by";
                     operation = "+";
                     answer = rand1 + rand2;
+                    answer = Math.abs(answer);
                     operandToSpeech = "plus";
                 }
                 else {
                     operation = "+";
                     answer = rand1 + rand2;
+                    answer = Math.abs(answer);
                     operandToSpeech = "plus";
                 }
 
@@ -189,7 +207,10 @@ public class MathToSpeech extends Activity {
                     rand2 = temp;
                 }
                 first.setText(Integer.toString(rand1));
+                firstText.setText(""+EnglishNumberToWords.convert(rand1));
                 second.setText(Integer.toString(rand2));
+                secondText.setText(""+EnglishNumberToWords.convert(rand2));
+
 
                 t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
                     @Override
