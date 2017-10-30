@@ -132,6 +132,14 @@
         <activity android:name=".MathToSpeech"
             android:label="MathToSpeech">
         </activity>
+
+        <activity android:name=".dragDrop.DragDropActivity"
+            android:label="DragDropActivity">
+        </activity>
+
+        <activity android:name=".Vocabulary.ClickAndListenSecond"
+            android:label="Click and listen">
+        </activity>
     </application>
 
 </manifest>

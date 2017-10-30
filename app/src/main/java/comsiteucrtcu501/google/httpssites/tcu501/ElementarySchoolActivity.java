@@ -8,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import comsiteucrtcu501.google.httpssites.tcu501.Vocabulary.ClickAndListenSecond;
+import comsiteucrtcu501.google.httpssites.tcu501.dragDrop.DragDropActivity;
+
 public class ElementarySchoolActivity extends AppCompatActivity {
 
     Button one,two,three,four,five,six;
@@ -67,7 +70,8 @@ public class ElementarySchoolActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mp3 = MediaPlayer.create(getApplicationContext(), R.raw.fifthgrade);
                 mp3.start();
-                Intent startNewActivity = new Intent(activity,QuintoGradoActivity.class);
+               // Intent startNewActivity = new Intent(activity,QuintoGradoActivity.class);
+                Intent startNewActivity = new Intent(activity,ClickAndListenSecond.class);
                 startActivity(startNewActivity);
 
             }
@@ -78,7 +82,8 @@ public class ElementarySchoolActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mp3 = MediaPlayer.create(getApplicationContext(), R.raw.sixthgrade);
                 mp3.start();
-                Intent startNewActivity = new Intent(activity,SextoGradoActivity.class);
+              //  Intent startNewActivity = new Intent(activity,SextoGradoActivity.class);
+                Intent startNewActivity = new Intent(activity,DragDropActivity.class);
                 startActivity(startNewActivity);
 
             }

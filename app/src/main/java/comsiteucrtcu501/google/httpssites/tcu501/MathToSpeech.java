@@ -57,7 +57,7 @@ public class MathToSpeech extends Activity {
                 else{
                     int i = Integer.parseInt(result);
                     if(i == answer){
-                        Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Correct! The answer is "+EnglishNumberToWords.convert(answer), Toast.LENGTH_LONG).show();
                         t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
                             @Override
                             public void onInit(int i) {
@@ -139,6 +139,7 @@ public class MathToSpeech extends Activity {
                             }
                         });
                     }
+                    editText.setText("");
                 }
             }
         });
