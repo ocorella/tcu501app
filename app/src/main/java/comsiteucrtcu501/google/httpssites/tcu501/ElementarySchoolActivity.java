@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import comsiteucrtcu501.google.httpssites.tcu501.Vocabulary.ClickAndListenSecond;
-import comsiteucrtcu501.google.httpssites.tcu501.dragDrop.DragDropActivity;
+import comsiteucrtcu501.google.httpssites.tcu501.dragDrop.DragDropSecondActivity;
 
 public class ElementarySchoolActivity extends AppCompatActivity {
 
@@ -83,7 +83,7 @@ public class ElementarySchoolActivity extends AppCompatActivity {
                 mp3 = MediaPlayer.create(getApplicationContext(), R.raw.sixthgrade);
                 mp3.start();
               //  Intent startNewActivity = new Intent(activity,SextoGradoActivity.class);
-                Intent startNewActivity = new Intent(activity,DragDropActivity.class);
+                Intent startNewActivity = new Intent(activity,DragDropSecondActivity.class);
                 startActivity(startNewActivity);
 
             }

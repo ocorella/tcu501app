@@ -133,7 +133,27 @@
             android:label="MathToSpeech">
         </activity>
 
-        <activity android:name=".dragDrop.DragDropActivity"
+        <activity android:name=".dragDrop.DragDropSecondActivity"
+            android:label="DragDropActivity">
+        </activity>
+
+        <activity android:name=".dragDrop.DragDropFifthActivity"
+            android:label="DragDropActivity">
+        </activity>
+
+        <activity android:name=".dragDrop.DragDropFirstActivity"
+            android:label="DragDropActivity">
+        </activity>
+
+        <activity android:name=".dragDrop.DragDropFourthActivity"
+            android:label="DragDropActivity">
+        </activity>
+
+        <activity android:name=".dragDrop.DragDropSixthActivity"
+            android:label="DragDropActivity">
+        </activity>
+
+        <activity android:name=".dragDrop.DragDropThirdActivity"
             android:label="DragDropActivity">
         </activity>
 

@@ -12,10 +12,10 @@ import java.util.Locale;
 import comsiteucrtcu501.google.httpssites.tcu501.R;
 
 /**
- * Created by oscar on 29/10/17.
+ * Created by oscar on 30/10/17.
  */
 
-public class ClickAndListenSecond extends AppCompatActivity {
+public class ClickListenFirst extends AppCompatActivity {
 
     TextToSpeech t1;
     LinearLayout one, two, three, four, five, six;
@@ -24,7 +24,7 @@ public class ClickAndListenSecond extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.click_listen_second);
+        setContentView(R.layout.clicklisten_first);
 
         one = (LinearLayout) findViewById(R.id.topleft);
         one.setOnClickListener(new View.OnClickListener() {

@@ -1,6 +1,5 @@
 package comsiteucrtcu501.google.httpssites.tcu501.dragDrop;
 
-import android.app.Activity;
 import android.content.ClipData;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -18,10 +17,10 @@ import java.util.Locale;
 import comsiteucrtcu501.google.httpssites.tcu501.R;
 
 /**
- * Created by oscar on 28/10/17.
+ * Created by oscar on 30/10/17.
  */
 
-public class DragDropActivity extends AppCompatActivity {
+public class DragDropFifthActivity  extends AppCompatActivity {
 
     ImageButton soundTopL, soundTopR, soundBottomL, soundBottomR, five, six;
     TextToSpeech t1;
@@ -30,7 +29,7 @@ public class DragDropActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.drag_drop_layout);
+        setContentView(R.layout.dragdrop_fifth);
         findViewById(R.id.myimage1).setOnTouchListener(new MyTouchListener());
         findViewById(R.id.myimage2).setOnTouchListener(new MyTouchListener());
         findViewById(R.id.myimage3).setOnTouchListener(new MyTouchListener());

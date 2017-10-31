@@ -12,10 +12,10 @@ import java.util.Locale;
 import comsiteucrtcu501.google.httpssites.tcu501.R;
 
 /**
- * Created by oscar on 29/10/17.
+ * Created by oscar on 30/10/17.
  */
 
-public class ClickAndListenSecond extends AppCompatActivity {
+public class ClickListenThird extends AppCompatActivity {
 
     TextToSpeech t1;
     LinearLayout one, two, three, four, five, six;

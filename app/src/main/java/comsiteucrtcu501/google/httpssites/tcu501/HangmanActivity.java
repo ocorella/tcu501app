@@ -23,6 +23,7 @@ public class HangmanActivity extends Activity{
     CurrentGameStatus current_game = new CurrentGameStatus();
     TextView hint, category;
     ImageView image;
+
     String[] urlImageList = {"https://cdn.pixabay.com/photo/2013/12/29/10/15/directory-235079_960_720.jpg",
             "https://cdn.pixabay.com/photo/2012/02/19/18/07/orange-15047_960_720.jpg",
             "https://asset.holidaycardsapp.com/assets/card/b_day229-6ae37171a98c1ce89a30eb6454e1fe60.png",
@@ -124,6 +125,7 @@ public class HangmanActivity extends Activity{
     }
 
     public void setHintText(String s){
+        image.setImageResource(0);
         switch (s) {
             case "directions":
                 hint.setText("You ask for this if you don't know where to go");
