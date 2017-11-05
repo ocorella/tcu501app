@@ -92,7 +92,7 @@
         </activity>
         <activity
             android:name=".SextoGradoActivity"
-            android:label="Six Grade"
+            android:label="Sixth Grade"
             android:parentActivityName=".ElementarySchoolActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -159,6 +159,10 @@
 
         <activity android:name=".Vocabulary.ClickAndListenSecond"
             android:label="Click and listen">
+        </activity>
+
+        <activity android:name=".FreeForAllActivity"
+            android:label="Free for all games">
         </activity>
     </application>
 

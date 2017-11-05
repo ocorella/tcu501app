@@ -41,8 +41,6 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
 
-        grade = getIntent().getExtras().getInt("grade");
-
         startGame();
     }
 

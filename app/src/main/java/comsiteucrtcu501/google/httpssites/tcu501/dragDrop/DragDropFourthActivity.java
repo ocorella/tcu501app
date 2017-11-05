@@ -100,7 +100,7 @@ public class DragDropFourthActivity  extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "This is the the flag of the United States";
+                            String toSpeak = "This is the flag of the United States";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }

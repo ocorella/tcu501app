@@ -70,8 +70,7 @@ public class ElementarySchoolActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mp3 = MediaPlayer.create(getApplicationContext(), R.raw.fifthgrade);
                 mp3.start();
-               // Intent startNewActivity = new Intent(activity,QuintoGradoActivity.class);
-                Intent startNewActivity = new Intent(activity,ClickAndListenSecond.class);
+               Intent startNewActivity = new Intent(activity,QuintoGradoActivity.class);
                 startActivity(startNewActivity);
 
             }
@@ -82,8 +81,7 @@ public class ElementarySchoolActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mp3 = MediaPlayer.create(getApplicationContext(), R.raw.sixthgrade);
                 mp3.start();
-              //  Intent startNewActivity = new Intent(activity,SextoGradoActivity.class);
-                Intent startNewActivity = new Intent(activity,DragDropSecondActivity.class);
+                Intent startNewActivity = new Intent(activity,SextoGradoActivity.class);
                 startActivity(startNewActivity);
 
             }

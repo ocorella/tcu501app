@@ -36,14 +36,7 @@ public class SecondGradeActivity extends AppCompatActivity {
                 startActivity(startNewActivity);
             }
         });
-        guess = (ImageView) findViewById(R.id.button_hangman);
-        guess.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startNewActivity = new Intent(activity,ClickAndListenSecond.class);
-                startActivity(startNewActivity);
-            }
-        });
+
 
 
     }

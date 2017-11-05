@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import comsiteucrtcu501.google.httpssites.tcu501.dragDrop.DragDropFifthActivity;
+import comsiteucrtcu501.google.httpssites.tcu501.dragDrop.DragDropFourthActivity;
 
 public class CuartoGradoActivity extends AppCompatActivity {
 
@@ -20,7 +21,7 @@ public class CuartoGradoActivity extends AppCompatActivity {
         drag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startNewActivity = new Intent(activity,DragDropFifthActivity.class);
+                Intent startNewActivity = new Intent(activity,DragDropFourthActivity.class);
                 startActivity(startNewActivity);
             }
         });
