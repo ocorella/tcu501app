@@ -3,10 +3,142 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="comsiteucrtcu501.google.httpssites.tcu501.CuartoGradoActivity">
 
+    tools:context="comsiteucrtcu501.google.httpssites.tcu501.ElementarySchoolActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.16666"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="Play fourth grade games!"/>
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3333"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+
+                <ImageView
+                    android:id="@+id/click_listen"
+                    android:src="@drawable/click"
+                    android:layout_margin="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+                <TextView
+                    android:layout_margin="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#B3000000"
+                    android:paddingLeft="10dp"
+                    android:foregroundGravity="top"
+                    android:gravity="center"
+                    android:text="Click and listen"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+
+                <ImageView
+                    android:id="@+id/drag_drop_image"
+                    android:src="@drawable/dragdrop"
+                    android:layout_margin="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+                <TextView
+                    android:layout_margin="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#B3000000"
+                    android:paddingLeft="10dp"
+                    android:foregroundGravity="top"
+                    android:gravity="center"
+                    android:text="Drag and Drop"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.16666">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+
+                <ImageView
+                    android:id="@+id/button_hangman"
+                    android:src="@drawable/guessword"
+                    android:layout_margin="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+                <TextView
+                    android:layout_margin="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#B3000000"
+                    android:paddingLeft="10dp"
+                    android:foregroundGravity="top"
+                    android:gravity="center"
+                    android:text="Guess the word"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
 </RelativeLayout>
+
+

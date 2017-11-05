@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import comsiteucrtcu501.google.httpssites.tcu501.dragDrop.DragDropFifthActivity;
+import comsiteucrtcu501.google.httpssites.tcu501.dragDrop.DragDropThirdActivity;
+
 public class ThirdGradeActivity extends AppCompatActivity {
 
     ImageView hangmanButton, memory, paint, puzzle;
@@ -25,31 +28,12 @@ public class ThirdGradeActivity extends AppCompatActivity {
 
             }
         });
-        memory = (ImageView) findViewById(R.id.memory_image);
-        memory.setOnClickListener(new View.OnClickListener() {
+
+        ImageView drag = (ImageView) findViewById(R.id.drag_drop_image);
+        drag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startNewActivity = new Intent(activity,MemoryActivity.class);
-                startNewActivity.putExtra("grade", 3);
-                startActivity(startNewActivity);
-
-            }
-        });
-
-        paint = (ImageView) findViewById(R.id.paint_image);
-        paint.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startNewActivity = new Intent(activity,PaintActivity.class);
-                startActivity(startNewActivity);
-            }
-        });
-
-        puzzle = (ImageView) findViewById(R.id.puzzle_image);
-        puzzle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startNewActivity = new Intent(activity,MathToSpeech.class);
+                Intent startNewActivity = new Intent(activity,DragDropThirdActivity.class);
                 startActivity(startNewActivity);
             }
         });
@@ -57,9 +41,4 @@ public class ThirdGradeActivity extends AppCompatActivity {
 
     }
 
-    public void goToMemory(View view){
-        Intent startNewActivity = new Intent(this,MemoryActivity.class);
-        startNewActivity.putExtra("grade", 3);
-        startActivity(startNewActivity);
-    }
 }

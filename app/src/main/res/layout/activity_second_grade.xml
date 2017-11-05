@@ -55,7 +55,7 @@
                     android:paddingLeft="10dp"
                     android:foregroundGravity="top"
                     android:gravity="center"
-                    android:text="Paint"
+                    android:text="Drag and Drop"
                     android:textColor="@color/white"
                     android:textSize="17sp"
                     android:textStyle="bold" />
@@ -84,7 +84,7 @@
                     android:paddingLeft="10dp"
                     android:foregroundGravity="top"
                     android:gravity="center"
-                    android:text="Memory"
+                    android:text="Click and listen"
                     android:textColor="@color/white"
                     android:textSize="17sp"
                     android:textStyle="bold" />
@@ -96,45 +96,7 @@
 
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.3333"
-            android:orientation="horizontal">
 
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5">
-
-                <ImageView
-                    android:id="@+id/button_hangman"
-                    android:src="@drawable/guessword"
-                    android:layout_margin="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    />
-
-                <TextView
-                    android:layout_margin="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:background="#B3000000"
-                    android:paddingLeft="10dp"
-                    android:foregroundGravity="top"
-                    android:gravity="center"
-                    android:text="Guess the word"
-                    android:textColor="@color/white"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-            </FrameLayout>
-
-
-
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
