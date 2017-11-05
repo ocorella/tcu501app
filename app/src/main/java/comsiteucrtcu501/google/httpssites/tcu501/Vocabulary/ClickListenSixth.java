@@ -52,7 +52,7 @@ public class ClickListenSixth extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "These are the cups dor the drinks";
+                            String toSpeak = "These are the cups for the drinks";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
