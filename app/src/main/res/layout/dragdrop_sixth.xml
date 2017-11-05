@@ -232,43 +232,26 @@
             android:id="@+id/myimage6"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/washhands" />
+            android:src="@drawable/juansantamaria" />
 
         <ImageView
             android:id="@+id/myimage5"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/soccer" />
+            android:src="@drawable/whatsapp" />
 
         <ImageView
             android:id="@+id/myimage7"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/junkfoodno" />
+            android:src="@drawable/smartphone" />
 
 
         <ImageView
             android:id="@+id/myimage1"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/book" />
-
-        <ImageView
-            android:id="@+id/myimage3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cat" />
-
-
-
-
-
-
-
-
-
-
-
+            android:src="@drawable/rainforest" />
 
 
     </LinearLayout>
@@ -296,7 +279,13 @@
             android:id="@+id/myimage4"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/chef" />
+            android:src="@drawable/keylor" />
+
+        <ImageView
+            android:id="@+id/myimage3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/party" />
 
 
 

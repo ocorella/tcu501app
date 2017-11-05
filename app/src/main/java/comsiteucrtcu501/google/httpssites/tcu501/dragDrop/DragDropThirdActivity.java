@@ -25,6 +25,13 @@ public class DragDropThirdActivity  extends AppCompatActivity {
     ImageButton soundTopL, soundTopR, soundBottomL, soundBottomR, five, six;
     TextToSpeech t1;
 
+    //She needs a broom
+    //He always eats at the table with his family
+    //I sleep in my bedroom
+    //I eat birthday cake on my birthday
+    //I need a pair of shoes
+    //Fruits are healthy
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,7 +67,7 @@ public class DragDropThirdActivity  extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "The boy loves reading";
+                            String toSpeak = "He always eats at the table with his family";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -76,7 +83,7 @@ public class DragDropThirdActivity  extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "The girl has a pet cat";
+                            String toSpeak = "She needs a broom";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -92,7 +99,7 @@ public class DragDropThirdActivity  extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "Maria has a green book";
+                            String toSpeak = "I sleep in my bedroom";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -109,7 +116,7 @@ public class DragDropThirdActivity  extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "Carlos is a cook";
+                            String toSpeak = "I eat birthday cake on my birthday";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -125,7 +132,7 @@ public class DragDropThirdActivity  extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "Erick washes his hands before eating";
+                            String toSpeak = "Fruits are healthy";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -142,7 +149,7 @@ public class DragDropThirdActivity  extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "Mary dislikes junk food";
+                            String toSpeak = "I need a pair of shoes";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -197,11 +204,11 @@ public class DragDropThirdActivity  extends AppCompatActivity {
                     int j = view.getId();
                     String s2 = getResources().getResourceName(j);
 
-                    if( (s.contains("topleft") && s2.contains("myimage1"))
-                            || (s.contains("topright") && s2.contains("myimage4"))
-                            || (s.contains("bottomleft") && s2.contains("myimage2"))
-                            || (s.contains("bottomright") && s2.contains("myimage3"))
-                            || (s.contains("fivelayout") && s2.contains("myimage6"))
+                    if( (s.contains("topleft") && s2.contains("myimage6"))
+                            || (s.contains("topright") && s2.contains("myimage5"))
+                            || (s.contains("bottomleft") && s2.contains("myimage3"))
+                            || (s.contains("bottomright") && s2.contains("myimage1"))
+                            || (s.contains("fivelayout") && s2.contains("myimage2"))
                             || (s.contains("sixlayout") && s2.contains("myimage7"))
                             ) {
                         container.addView(view);

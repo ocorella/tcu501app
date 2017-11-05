@@ -46,12 +46,7 @@
                 android:layout_gravity="bottom|right"
                 />
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="70dp"
-                android:src="@drawable/cartoon_girl"
-                android:layout_gravity="bottom"
-                android:foregroundGravity="bottom"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -70,13 +65,7 @@
                 android:layout_gravity="bottom|right"
                 />
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/boy_cartoon"
-                android:layout_gravity="bottom"
-                android:foregroundGravity="bottom"/>
+
 
 
         </LinearLayout>
@@ -107,14 +96,6 @@
                 android:layout_gravity="bottom|right"
                 />
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="70dp"
-                android:src="@drawable/boy_cartoon"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="5dp"
-
-                android:foregroundGravity="bottom"/>
 
         </LinearLayout>
 
@@ -136,12 +117,7 @@
                 android:layout_gravity="bottom|right"
                 />
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="70dp"
-                android:src="@drawable/cartoon_girl"
-                android:layout_gravity="bottom"
-                android:foregroundGravity="bottom"/>
+
 
         </LinearLayout>
 
@@ -171,13 +147,7 @@
                 android:layout_gravity="bottom|right"
                 />
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="65dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/boy_cartoon"
-                android:layout_gravity="bottom"
-                android:foregroundGravity="bottom"/>
+
 
         </LinearLayout>
 
@@ -199,12 +169,7 @@
                 android:layout_gravity="bottom|right"
                 />
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="70dp"
-                android:src="@drawable/cartoon_girl"
-                android:layout_gravity="bottom"
-                android:foregroundGravity="bottom"/>
+
 
         </LinearLayout>
 
@@ -232,32 +197,26 @@
             android:id="@+id/myimage6"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/washhands" />
+            android:src="@drawable/hello" />
 
         <ImageView
             android:id="@+id/myimage5"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/soccer" />
+            android:src="@drawable/greenpencil" />
 
         <ImageView
             android:id="@+id/myimage7"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/junkfoodno" />
+            android:src="@drawable/chair2" />
 
 
         <ImageView
             android:id="@+id/myimage1"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/book" />
-
-        <ImageView
-            android:id="@+id/myimage3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cat" />
+            android:src="@drawable/schoolbuilding" />
 
 
 
@@ -290,13 +249,19 @@
             android:id="@+id/myimage2"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/reading" />
+            android:src="@drawable/rupert" />
 
         <ImageView
             android:id="@+id/myimage4"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:src="@drawable/chef" />
+
+        <ImageView
+            android:id="@+id/myimage3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/goodbye" />
 
 
 

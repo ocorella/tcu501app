@@ -232,43 +232,26 @@
             android:id="@+id/myimage6"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/washhands" />
+            android:src="@drawable/raincloud" />
 
         <ImageView
             android:id="@+id/myimage5"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/soccer" />
+            android:src="@drawable/usa" />
 
         <ImageView
             android:id="@+id/myimage7"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/junkfoodno" />
+            android:src="@drawable/umbrella" />
 
 
         <ImageView
             android:id="@+id/myimage1"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/book" />
-
-        <ImageView
-            android:id="@+id/myimage3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cat" />
-
-
-
-
-
-
-
-
-
-
-
+            android:src="@drawable/clothing_store_icon" />
 
 
     </LinearLayout>
@@ -290,13 +273,21 @@
             android:id="@+id/myimage2"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/reading" />
+            android:src="@drawable/skateboard" />
 
         <ImageView
             android:id="@+id/myimage4"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/chef" />
+            android:src="@drawable/mexico" />
+
+
+        <ImageView
+            android:id="@+id/myimage3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/sunny" />
+
 
 
 
