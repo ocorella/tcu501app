@@ -22,7 +22,7 @@
 
 
         <LinearLayout
-            android:background="@drawable/smellflower"
+            android:background="@drawable/helloman"
             android:id="@+id/topleft"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -36,7 +36,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:background="@drawable/soccer">
+            android:background="@drawable/happy">
 
 
 
@@ -58,7 +58,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:background="@drawable/shower">
+            android:background="@drawable/sad">
 
 
 
@@ -71,7 +71,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:background="@drawable/fruitsveggies">
+            android:background="@drawable/goodmorning">
 
 
 
@@ -92,7 +92,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:background="@drawable/rainy">
+            android:background="@drawable/goodnight">
 
 
 
@@ -105,7 +105,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:background="@drawable/sunny">
+            android:background="@drawable/sixyellow">
 
 
 

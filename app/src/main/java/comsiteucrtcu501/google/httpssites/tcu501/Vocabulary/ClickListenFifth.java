@@ -35,7 +35,7 @@ public class ClickListenFifth extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "I am smelling a flower with my nose";
+                            String toSpeak = "I played chess with my friend during the weekend";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -52,7 +52,7 @@ public class ClickListenFifth extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "I kick the ball with my feet when I play soccer";
+                            String toSpeak = "In my free time i like listening to music";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -69,7 +69,7 @@ public class ClickListenFifth extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "I always take a shower in the morning";
+                            String toSpeak = "I'm going to play soccer with my friends tomorrow";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -86,7 +86,7 @@ public class ClickListenFifth extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "Eating fruits and vegetables is healthy";
+                            String toSpeak = "I like to play the guitar";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -104,7 +104,7 @@ public class ClickListenFifth extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "The weather is rainy";
+                            String toSpeak = "I brush my teeth three times a day ";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -121,7 +121,7 @@ public class ClickListenFifth extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "The weather is sunny";
+                            String toSpeak = "Eating spaghetti is delicious!";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }

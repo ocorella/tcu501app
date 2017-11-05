@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import comsiteucrtcu501.google.httpssites.tcu501.Vocabulary.ClickListenFirst;
 import comsiteucrtcu501.google.httpssites.tcu501.dragDrop.DragDropFifthActivity;
 import comsiteucrtcu501.google.httpssites.tcu501.dragDrop.DragDropFirstActivity;
 
@@ -18,10 +19,20 @@ public class FirstGradeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_first_grade);
         final Activity mActivity = this;
         ImageView drag = (ImageView) findViewById(R.id.drag_drop_image);
+        ImageView clicklisten = (ImageView) findViewById(R.id.click_listen);
+
         drag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent startNewActivity = new Intent(mActivity,DragDropFirstActivity.class);
+                startActivity(startNewActivity);
+            }
+        });
+
+        clicklisten.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startNewActivity = new Intent(mActivity,ClickListenFirst.class);
                 startActivity(startNewActivity);
             }
         });

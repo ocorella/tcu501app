@@ -157,7 +157,27 @@
             android:label="DragDropActivity">
         </activity>
 
+        <activity android:name=".Vocabulary.ClickListenFirst"
+            android:label="Click and listen">
+        </activity>
+
         <activity android:name=".Vocabulary.ClickAndListenSecond"
+            android:label="Click and listen">
+        </activity>
+
+        <activity android:name=".Vocabulary.ClickListenThird"
+            android:label="Click and listen">
+        </activity>
+
+        <activity android:name=".Vocabulary.ClickListenFourth"
+            android:label="Click and listen">
+        </activity>
+
+        <activity android:name=".Vocabulary.ClickListenFifth"
+            android:label="Click and listen">
+        </activity>
+
+        <activity android:name=".Vocabulary.ClickListenSixth"
             android:label="Click and listen">
         </activity>
 

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import comsiteucrtcu501.google.httpssites.tcu501.Vocabulary.ClickListenFifth;
+import comsiteucrtcu501.google.httpssites.tcu501.Vocabulary.ClickListenFirst;
 import comsiteucrtcu501.google.httpssites.tcu501.dragDrop.DragDropFifthActivity;
 
 public class QuintoGradoActivity extends AppCompatActivity {
@@ -21,6 +23,15 @@ public class QuintoGradoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent startNewActivity = new Intent(activity,DragDropFifthActivity.class);
+                startActivity(startNewActivity);
+            }
+        });
+
+        ImageView clicklisten = (ImageView) findViewById(R.id.click_listen);
+        clicklisten.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startNewActivity = new Intent(activity,ClickListenFifth.class);
                 startActivity(startNewActivity);
             }
         });

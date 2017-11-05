@@ -35,7 +35,7 @@ public class ClickListenSixth extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "I am smelling a flower with my nose";
+                            String toSpeak = "We all need to take the garbage out";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -52,7 +52,7 @@ public class ClickListenSixth extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "I kick the ball with my feet when I play soccer";
+                            String toSpeak = "These are the cups dor the drinks";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -69,7 +69,7 @@ public class ClickListenSixth extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "I always take a shower in the morning";
+                            String toSpeak = "Ferns grow in the rainforest";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -86,7 +86,7 @@ public class ClickListenSixth extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "Eating fruits and vegetables is healthy";
+                            String toSpeak = "We will dance at the party";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -104,7 +104,7 @@ public class ClickListenSixth extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "The weather is rainy";
+                            String toSpeak = "Recycle bins are important because they help us separate garbage";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -121,7 +121,7 @@ public class ClickListenSixth extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "The weather is sunny";
+                            String toSpeak = "Do not share passwords";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }

@@ -22,7 +22,7 @@
 
 
         <LinearLayout
-            android:background="@drawable/smellflower"
+            android:background="@drawable/swimming"
             android:id="@+id/topleft"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -36,7 +36,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:background="@drawable/soccer">
+            android:background="@drawable/bybus">
 
 
 
@@ -58,7 +58,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:background="@drawable/shower">
+            android:background="@drawable/theater">
 
 
 
@@ -71,7 +71,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:background="@drawable/fruitsveggies">
+            android:background="@drawable/surf">
 
 
 
@@ -92,7 +92,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:background="@drawable/rainy">
+            android:background="@drawable/basketball">
 
 
 
@@ -105,7 +105,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:background="@drawable/sunny">
+            android:background="@drawable/semaphore">
 
 
 

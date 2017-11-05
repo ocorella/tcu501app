@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import comsiteucrtcu501.google.httpssites.tcu501.Vocabulary.ClickListenThird;
 import comsiteucrtcu501.google.httpssites.tcu501.dragDrop.DragDropFifthActivity;
 import comsiteucrtcu501.google.httpssites.tcu501.dragDrop.DragDropThirdActivity;
 
@@ -34,6 +35,15 @@ public class ThirdGradeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent startNewActivity = new Intent(activity,DragDropThirdActivity.class);
+                startActivity(startNewActivity);
+            }
+        });
+
+        ImageView listen = (ImageView) findViewById(R.id.click_listen);
+        listen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startNewActivity = new Intent(activity,ClickListenThird.class);
                 startActivity(startNewActivity);
             }
         });

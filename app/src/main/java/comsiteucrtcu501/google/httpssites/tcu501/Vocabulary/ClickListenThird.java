@@ -24,7 +24,7 @@ public class ClickListenThird extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.click_listen_second);
+        setContentView(R.layout.clicklisten_third);
 
         one = (LinearLayout) findViewById(R.id.topleft);
         one.setOnClickListener(new View.OnClickListener() {
@@ -35,7 +35,7 @@ public class ClickListenThird extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "I am smelling a flower with my nose";
+                            String toSpeak = "He is swimming";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -52,7 +52,7 @@ public class ClickListenThird extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "I kick the ball with my feet when I play soccer";
+                            String toSpeak = "He is going to school by bus";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -69,7 +69,7 @@ public class ClickListenThird extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "I always take a shower in the morning";
+                            String toSpeak = "In San Jose there are several theaters";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -86,7 +86,7 @@ public class ClickListenThird extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "Eating fruits and vegetables is healthy";
+                            String toSpeak = "In Costa Rica you can practice surfing";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -104,7 +104,7 @@ public class ClickListenThird extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "The weather is rainy";
+                            String toSpeak = "I enjoy playing basketball";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -121,7 +121,7 @@ public class ClickListenThird extends AppCompatActivity {
                     public void onInit(int i) {
                         if (i != TextToSpeech.ERROR){
                             t1.setLanguage(Locale.ENGLISH);
-                            String toSpeak = "The weather is sunny";
+                            String toSpeak = "The red light means stop, the yellow light means be careful, and the green light means go";
                             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     }
@@ -131,3 +131,4 @@ public class ClickListenThird extends AppCompatActivity {
 
     }
 }
+
