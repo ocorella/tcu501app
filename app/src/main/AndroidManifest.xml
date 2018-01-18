@@ -9,13 +9,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainScreen">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
-
         <activity
             android:name=".SplashActivity"
             android:configChanges="orientation"
@@ -107,83 +108,74 @@
                 android:value=".FirstGradeActivity" />
             >
         </activity>
-        <activity android:name=".MemoryActivity"
+        <activity
+            android:name=".MemoryActivity"
             android:label="Memory"
             android:parentActivityName=".FirstGradeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".FirstGradeActivity" />
         </activity>
-        <activity android:name=".RompecabezasActivity"
+        <activity
+            android:name=".RompecabezasActivity"
             android:label="Rompecabezas"
             android:parentActivityName=".FirstGradeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".FirstGradeActivity" />
         </activity>
-        <activity android:name=".HangmanActivity"
+        <activity
+            android:name=".HangmanActivity"
             android:label="Hangman"
             android:parentActivityName=".ThirdGradeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ThirdGradeActivity" />
         </activity>
-
-        <activity android:name=".MathToSpeech"
-            android:label="MathToSpeech">
-        </activity>
-
-        <activity android:name=".dragDrop.DragDropSecondActivity"
-            android:label="DragDropActivity">
-        </activity>
-
-        <activity android:name=".dragDrop.DragDropFifthActivity"
-            android:label="DragDropActivity">
-        </activity>
-
-        <activity android:name=".dragDrop.DragDropFirstActivity"
-            android:label="DragDropActivity">
-        </activity>
-
-        <activity android:name=".dragDrop.DragDropFourthActivity"
-            android:label="DragDropActivity">
-        </activity>
-
-        <activity android:name=".dragDrop.DragDropSixthActivity"
-            android:label="DragDropActivity">
-        </activity>
-
-        <activity android:name=".dragDrop.DragDropThirdActivity"
-            android:label="DragDropActivity">
-        </activity>
-
-        <activity android:name=".Vocabulary.ClickListenFirst"
-            android:label="Click and listen">
-        </activity>
-
-        <activity android:name=".Vocabulary.ClickAndListenSecond"
-            android:label="Click and listen">
-        </activity>
-
-        <activity android:name=".Vocabulary.ClickListenThird"
-            android:label="Click and listen">
-        </activity>
-
-        <activity android:name=".Vocabulary.ClickListenFourth"
-            android:label="Click and listen">
-        </activity>
-
-        <activity android:name=".Vocabulary.ClickListenFifth"
-            android:label="Click and listen">
-        </activity>
-
-        <activity android:name=".Vocabulary.ClickListenSixth"
-            android:label="Click and listen">
-        </activity>
-
-        <activity android:name=".FreeForAllActivity"
-            android:label="Free for all games">
-        </activity>
+        <activity
+            android:name=".MathToSpeech"
+            android:label="MathToSpeech" />
+        <activity
+            android:name=".dragDrop.DragDropSecondActivity"
+            android:label="DragDropActivity" />
+        <activity
+            android:name=".dragDrop.DragDropFifthActivity"
+            android:label="DragDropActivity" />
+        <activity
+            android:name=".dragDrop.DragDropFirstActivity"
+            android:label="DragDropActivity" />
+        <activity
+            android:name=".dragDrop.DragDropFourthActivity"
+            android:label="DragDropActivity" />
+        <activity
+            android:name=".dragDrop.DragDropSixthActivity"
+            android:label="DragDropActivity" />
+        <activity
+            android:name=".dragDrop.DragDropThirdActivity"
+            android:label="DragDropActivity" />
+        <activity
+            android:name=".Vocabulary.ClickListenFirst"
+            android:label="Click and listen" />
+        <activity
+            android:name=".Vocabulary.ClickAndListenSecond"
+            android:label="Click and listen" />
+        <activity
+            android:name=".Vocabulary.ClickListenThird"
+            android:label="Click and listen" />
+        <activity
+            android:name=".Vocabulary.ClickListenFourth"
+            android:label="Click and listen" />
+        <activity
+            android:name=".Vocabulary.ClickListenFifth"
+            android:label="Click and listen" />
+        <activity
+            android:name=".Vocabulary.ClickListenSixth"
+            android:label="Click and listen" />
+        <activity
+            android:name=".FreeForAllActivity"
+            android:label="Free for all games" />
+        <activity android:name=".WordSearch.WordSearchMenuActivity" />
+        <activity android:name=".WordSearchGameActivity"></activity>
     </application>
 
 </manifest>

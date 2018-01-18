@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
+import comsiteucrtcu501.google.httpssites.tcu501.WordSearch.WordSearchMenuActivity;
+
 /**
  * Created by oscar on 05/11/17.
  */
@@ -14,7 +16,7 @@ import android.widget.ImageView;
 public class FreeForAllActivity extends AppCompatActivity {
 
     Activity activity = this;
-    ImageView paint, memory, math;
+    ImageView paint, memory, math,wordSearch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,7 @@ public class FreeForAllActivity extends AppCompatActivity {
         paint = (ImageView) findViewById(R.id.paint);
         memory = (ImageView) findViewById(R.id.memory);
         math = (ImageView) findViewById(R.id.math);
+        wordSearch = (ImageView) findViewById(R.id.word_search);
         paint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,6 +48,16 @@ public class FreeForAllActivity extends AppCompatActivity {
 
             }
         });
+
+       wordSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startNewActivity = new Intent(activity,WordSearchMenuActivity.class);
+                startActivity(startNewActivity);
+
+            }
+        });
+
     }
 
 }

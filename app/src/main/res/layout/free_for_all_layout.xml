@@ -102,10 +102,6 @@
             android:layout_height="0dp"
             android:layout_weight="0.333">
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.25"/>
 
             <FrameLayout
                 android:layout_width="0dp"
@@ -136,10 +132,36 @@
 
             </FrameLayout>
 
-            <View
+
+            <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.25"/>
+                android:layout_weight="0.5">
+
+                <ImageView
+                    android:id="@+id/word_search"
+                    android:src="@drawable/word_search_icon"
+                    android:layout_margin="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+                <TextView
+                    android:layout_margin="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#B3000000"
+                    android:paddingLeft="10dp"
+                    android:foregroundGravity="top"
+                    android:gravity="center"
+                    android:text="Words Search"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
 
         </LinearLayout>
 
